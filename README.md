@@ -69,6 +69,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Cara Menjalankan Website:
+1. Upload isi folder "build" ke public_html di hosting Anda.
+2. Untuk update konten, hubungi developer: Rara (nshafirah37@gmail.com)
 =======
 # draft-porto
+
 
