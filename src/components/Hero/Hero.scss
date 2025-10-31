@@ -32,17 +32,18 @@
   text-align: left;
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #ff5f8f;
     margin-bottom: 15px;
     font-weight: 700;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #444;
     line-height: 1.6;
     font-weight: 400;
+    text-align: justify;
   }
 }
 
@@ -86,18 +87,18 @@
 
   .react-logo {
     top: -40px;
-    right: -50px;
+    right: -80px;
   }
 
   .js-logo {
     bottom: -40px;
-    left: -40px;
+    left: -80px;
     animation-delay: 1s;
   }
 
   .css-logo {
     top: 60%;
-    right: -60px;
+    right: -80px;
     animation-delay: 2s;
   }
 }

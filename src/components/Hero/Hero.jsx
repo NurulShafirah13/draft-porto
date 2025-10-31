@@ -9,10 +9,11 @@ const Hero = () => {
   return (
     <section className="hero-container">
       <div className="hero-content">
-        <h2>belajar sampai gua jago</h2>
+        <h2>Hi, I'm Shafirah</h2>
         <p>
-          suka belajar, mudah beradaptasi terhadap hal baru, pantang menyerah
-          terus semangat, miss you all
+          Nurul Shafirah Ramadhani, a highly motivated and adaptive graduated in Informatics Engineering
+          from Yarsi University with good interpersonal skills and a passion for
+          continuous learning.
         </p>
       </div>
       <div className="hero-image">
