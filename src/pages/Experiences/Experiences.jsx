@@ -1,11 +1,12 @@
 import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 
 function Contact() {
   return (
     <section className="contact">
+      <Navbar/>
       <h2>Contact Me 💌</h2>
-      <p>Email: <a href="mailto:nshafirah37@gmail.com">nshafirah37@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/mindjoy">mindjoy</a></p>
+      <h3>pokoknya gua jago banget lebih jago dari bang jago</h3>
       {/* <p>LinkedIn: <a href="#">linkedin.com/in/nurulshafirah</a></p> */}
     </section>
   );

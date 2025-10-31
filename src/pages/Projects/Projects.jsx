@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../../components/navbar/Navbar";
 
 function Projects() {
   const projects = [
@@ -21,6 +22,7 @@ function Projects() {
 
   return (
     <section className="projects">
+      <Navbar/>
       <h2>My Projects 💻</h2>
       <div className="project-grid">
         {projects.map((p, i) => (

@@ -1,0 +1,143 @@
+.hero-container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe6ec, #fff);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 120px 10%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  /* Pola titik-titik lembut di background */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ffd6e0 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.4;
+    z-index: 0;
+  }
+}
+
+.hero-content {
+  max-width: 500px;
+  z-index: 2;
+  text-align: left;
+
+  h2 {
+    font-size: 2.5rem;
+    color: #ff5f8f;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+
+.hero-image {
+  position: relative;
+  z-index: 2;
+
+  .queen {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 4px solid #fff;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Kotak/pola warna di belakang foto */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
+    z-index: 1;
+    transform: rotate(-6deg);
+  }
+
+  img.react-logo,
+  img.js-logo,
+  img.css-logo {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .react-logo {
+    top: -40px;
+    right: -50px;
+  }
+
+  .js-logo {
+    bottom: -40px;
+    left: -40px;
+    animation-delay: 1s;
+  }
+
+  .css-logo {
+    top: 60%;
+    right: -60px;
+    animation-delay: 2s;
+  }
+}
+
+/* Efek animasi melayang untuk logo */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 100px 5%;
+    text-align: center;
+  }
+
+  .hero-content {
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .hero-image {
+    margin-top: 30px;
+
+    .queen {
+      width: 220px;
+      height: 220px;
+    }
+  }
+}
