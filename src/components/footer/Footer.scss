@@ -1,0 +1,73 @@
+.footer {
+  background: #e62183;
+  color: #fff;
+  padding: 0.8rem 0;
+  text-align: center;
+  /* biar nempel full ke kanan dan kiri */
+  width: 100vw;
+  position: relative;
+  // trik CSS untuk “keluar” dari batas container, 
+  //jadi warnanya bisa full ke sisi kiri dan kanan layar.
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+
+
+  .footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .footer-left {
+    font-size: 0.9rem;
+    color: #fdfdfd;
+    text-align: left;
+
+    p {
+    font-size: 40px;
+  }
+  }
+
+
+
+  .footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    p {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      font-size: 1.2rem;
+      color: #fff;
+
+      svg {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.6rem;
+    }
+
+    .footer-left {
+      text-align: center;
+    }
+  }
+}

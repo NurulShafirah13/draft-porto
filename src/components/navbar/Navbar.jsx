@@ -27,11 +27,11 @@ function Navbar() {
           <Link to="/" className="menu-item">
             Home
           </Link>
-          <li>
+          {/* <li>
             <Link to="/skills" className="menu-item">
               Skills
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/projects" className="menu-item">
               Projects

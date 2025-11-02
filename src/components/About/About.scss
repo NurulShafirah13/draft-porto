@@ -1,0 +1,82 @@
+.about {
+ padding: 1rem 1rem 1rem;
+  background: linear-gradient(to bottom, #ffffff, #fff5fb);
+  color: #333;
+  // font-family: "Poppins", sans-serif;
+  text-align: center;
+
+  header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #e62183;
+      letter-spacing: 0.5px;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2.5px;
+        background: #ffd1e6;
+        bottom: -8px;
+        left: 25%;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  article {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    text-align: justify;
+    color: #444;
+    line-height: 2;
+    letter-spacing: 0.2px;
+
+    p {
+      margin-bottom: 1.8rem;
+      transition: all 0.3s ease;
+      background: transparent;
+
+      &:hover {
+        color: #e62183;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  /* efek animasi lembut saat muncul */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  header,
+  article p {
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1.5rem;
+
+    header h2 {
+      font-size: 2rem;
+    }
+
+    article {
+      font-size: 1rem;
+    }
+  }
+}

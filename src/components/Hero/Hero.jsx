@@ -1,6 +1,6 @@
 import react from "react";
 import reactLogo from "../../assets/images/react.png";
-import queenLogo from "../../assets/images/FOTO RARA.jpg";
+import queenLogo from "../../assets/images/rara.jpg";
 import javascriptLogo from "../../assets/images/javascript.png";
 import cssLogo from "../../assets/images/css-3.png";
 import "./Hero.scss";
