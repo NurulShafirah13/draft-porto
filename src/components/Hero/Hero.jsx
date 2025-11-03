@@ -1,6 +1,6 @@
 import react from "react";
 import reactLogo from "../../assets/images/react.png";
-import queenLogo from "../../assets/images/rara.jpg";
+import queenLogo from "../../assets/images/rara-2.png";
 import javascriptLogo from "../../assets/images/javascript.png";
 import cssLogo from "../../assets/images/css-3.png";
 import "./Hero.scss";
@@ -15,6 +15,8 @@ const Hero = () => {
           from Yarsi University with good interpersonal skills and a passion for
           continuous learning.
         </p>
+
+        <h4>My Resume</h4>
       </div>
       <div className="hero-image">
         <img src={queenLogo} alt="Queen" className="queen" />

@@ -4,18 +4,25 @@ import About from "../../components/About/About";
 import Hero from "../../components/Hero/Hero";
 import Footer from "../../components/footer/Footer";
 import HardSkills from "../../components/HardSkills/HardSkills";
-function Home() {
+
+// Home.jsx
+const Home = () => {
   return (
-    <section className="home">
-      <Navbar />
-      <main>
+    <>
+      <section className="hero">
         <Hero />
+      </section>
+
+      <section className="about">
         <About />
-         <HardSkills/>
-      </main>
-      <Footer />
-    </section>
+      </section>
+
+      <section className="skills">
+        <HardSkills />
+      </section>
+    </>
   );
-}
+};
+
 
 export default Home;

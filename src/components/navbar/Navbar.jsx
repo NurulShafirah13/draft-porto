@@ -27,11 +27,6 @@ function Navbar() {
           <Link to="/" className="menu-item">
             Home
           </Link>
-          {/* <li>
-            <Link to="/skills" className="menu-item">
-              Skills
-            </Link>
-          </li> */}
           <li>
             <Link to="/projects" className="menu-item">
               Projects
@@ -40,6 +35,11 @@ function Navbar() {
           <li>
             <Link to="/experiences" className="menu-item">
               Work Experiences
+            </Link>
+          </li>
+          <li>
+            <Link to="/artSkills" className="menu-item">
+              Art Hobbies
             </Link>
           </li>
         </ul>

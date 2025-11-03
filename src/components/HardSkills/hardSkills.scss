@@ -1,7 +1,7 @@
 /* ===== MAIN WRAPPER ===== */
 .skills {
-  padding: 2rem 2rem 5rem;
-    background: linear-gradient(135deg, #ffe6ec, #eceaea);
+  padding: 4rem 2rem 1rem; /* tambah ruang di atas & bawah */
+  background: linear-gradient(135deg, #ffe6ec, #eceaea);
 
   header {
     text-align: center;
@@ -9,7 +9,7 @@
 
     h2 {
       font-size: 2.5rem;
-      margin-top: 2px;
+      margin-top: -100px;
       font-weight: 800;
       color: #e62183;
       // text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
@@ -22,26 +22,42 @@
       color: #e62183;
       // text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
     }
+
+    p {
+      font-size: 1.3rem;
+      text-align: center;
+      max-width: 850px; /* batasi lebar teks */
+      margin: 0 auto; /* center */
+      padding: 0 1rem; /* sedikit padding kiri-kanan */
+    }
   }
 }
 
-/* ===== SKILLS CARD SECTION (atas) ===== */
+/* ===== SKILLS CARD SECTION ===== */
 .skills-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 7rem; /* kasih napas antar kolom */
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* biar center */
 }
 
 /* Style tiap kategori skill */
 .skill-category {
   background: #ffffff;
-  padding: 1.4rem 1.8rem;
+  padding: 1rem 1.8rem;
   border-radius: 18px;
-  width: 300px;
+  width: 100%;
+  // height: 100%; //kalo di uncomemnt bikin cardnya tinggi soalnya dia ambil card maksimal height
   box-shadow: 0 4px 12px rgba(230, 33, 131, 0.15);
   text-align: center;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
   &:hover {
     transform: translateY(-6px);
@@ -58,22 +74,20 @@
 
 .skill-items {
   display: grid;
-  grid-template-columns: repeat(3, minmax(90px, 1fr)); // biar rapi sejajar
-  gap: 0.50rem;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.5rem;
   justify-items: center;
-  align-items: stretch; // biar tinggi sejajar
-  margin-top: 0.85rem;
+  margin-top: 0.30rem;
 
   .skill-item {
     display: flex;
     flex-direction: column;
-    justify-content: center; // ikon dan teks di tengah vertikal
+    justify-content: center;
     align-items: center;
     text-align: center;
     background: transparent;
     border-radius: 16px;
-    padding: 1rem;
-    min-height: 70px; // bikin semua sejajar tinggi
+    padding: 0.3rem;
     transition: transform 0.3s ease;
 
     &:hover {
@@ -81,25 +95,25 @@
     }
 
     .skill-icon {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       object-fit: contain;
       margin-bottom: 0.3rem;
     }
 
     figcaption {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 500;
       color: #333;
-      word-wrap: break-word;
     }
   }
 }
 
 /* Responsif */
 @media (max-width: 992px) {
-  .skill-items {
-    grid-template-columns: repeat(2, 1fr);
+  .skill-category {
+    width: 90%;
+    min-height: auto;
   }
 }
 
@@ -108,8 +122,6 @@
     grid-template-columns: 1fr;
   }
 }
-
-
 
 /* ===== DESCRIPTION SECTION (tanpa kotak, 2 kolom) ===== */
 .soft-art-section {
@@ -135,13 +147,11 @@
     margin: 0 auto;
     flex-wrap: wrap;
 
-     @media (max-width: 900px) {
+    @media (max-width: 900px) {
       grid-template-columns: 1fr; /* responsif ke satu kolom */
       gap: 2rem;
     }
-  
   }
-
 
   .text-content {
     flex: 1;
@@ -151,7 +161,7 @@
       font-size: 1.6rem;
       color: #e62183;
       margin-bottom: 0.8rem;
-      margin-top: 0.20rem;
+      margin-top: 0.2rem;
     }
 
     p {
@@ -161,11 +171,15 @@
       text-align: justify;
       margin-bottom: 2rem;
     }
-    h4 {
-      box-shadow: #e62183;
-      border-radius: 10px;
-      margin-top: 20px;
-
+    li {
+      background-color: #e62183;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 50px;
+      margin: 5px;
+      font-size: 1rem;
+      // margin-top: 20px;
+      display: inline-block;
     }
 
     /* garis pemisah halus */

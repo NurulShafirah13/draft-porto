@@ -1,6 +1,5 @@
 import React from "react";
 import "./hardSkills.scss";
-import Navbar from "../../components/navbar/Navbar";
 
 function HardSkill() {
   const skills = [
@@ -36,22 +35,18 @@ function HardSkill() {
   ];
 
   return (
-    <>
-      <Navbar />
-      <main className="skills">
-        <header>
-          <h2>The Tools I’m Exploring and Growing With 🚀</h2>
+    <section className="skills">
+      <header className="skills-header">
+        <h2>The Tools I’m Exploring and Growing With 🚀</h2>
+        <p>
+          I’m still in the process of learning and exploring new technologies.
+          Every project I build helps me understand more about how things work — 
+          from front-end frameworks to database management. Learning never stops.
+        </p>
+      </header>
 
-          <h3>
-            I’m still in the process of learning and exploring new technologies.
-            Every project I build helps me understand more about how things work
-            — from front-end frameworks to database management. Learning never
-            stops.
-          </h3>
-        </header>
-
-        {/* daftar skills utama */}
-        <section className="skills-container">
+      <div className="skills-wrapper">
+        <div className="skills-container">
           {skills.map((skillCategory, index) => (
             <article key={index} className="skill-category">
               <h3>{skillCategory.category}</h3>
@@ -69,45 +64,48 @@ function HardSkill() {
               </div>
             </article>
           ))}
-        </section>
+        </div>
 
-        {/* dua kolom: hard & soft skills */}
-        <section className="soft-art-section">
+        <div className="soft-art-section">
           <h2>About My Skills</h2>
 
           <div className="skills-description">
-            {/* kiri */}
-            <div className="text-content">
+            <article className="text-content">
               <h3>Hard Skills</h3>
               <p>
                 I’m continuously learning various technologies to build modern
-                applications. I also explore tools like Microsoft Office to
-                support my work in creating reports and journals. I believe that
-                technical skills go beyond coding — they’re about understanding
-                problems and crafting efficient, meaningful solutions.
+                applications. I also explore tools like Microsoft Office to support my
+                work in creating reports and journals. I believe that technical skills
+                go beyond coding — they’re about understanding problems and crafting
+                efficient, meaningful solutions.
               </p>
-              
+              <ul>
+                <li>Ms.Office</li>
+                <li>Web Development</li>
+                <li>Data Analyst</li>
+                <li>Database</li>
+              </ul>
+            </article>
 
-            </div>
-
-            {/* kanan */}
-            <div className="text-content">
+            <article className="text-content">
               <h3>Soft Skills</h3>
               <p>
-                Beyond technical abilities, I have strong communication and
-                teamwork skills. I adapt quickly, love learning new things, and
-                thrive in dynamic environments. I believe that positivity and
-                empathy are also key parts of professional success.
+                Beyond technical abilities, I have strong communication and teamwork
+                skills. I adapt quickly, love learning new things, and thrive in
+                dynamic environments. I believe that positivity and empathy are also
+                key parts of professional success.
               </p>
-              
-                <h4>Time-Management</h4>
-                <h4>Empaty</h4>
-              
-            </div>
+              <ul>
+                <li>Time-Management</li>
+                <li>Empathy</li>
+                <li>Team-Work</li>
+                <li>Self-Motivation</li>
+              </ul>
+            </article>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </div>
+    </section>
   );
 }
 

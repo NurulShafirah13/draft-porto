@@ -1,0 +1,24 @@
+.list-project {
+  padding-top: 100px; /* kasih ruang di bawah navbar */
+  min-height: 100vh; /* biar selalu penuh 1 layar */
+  background-color: #fffafc; /* tone lembut pink muda */
+  color: #222;
+  text-align: center;
+
+  header {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      color: #e62183;
+      letter-spacing: 1px;
+    }
+  }
+
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
