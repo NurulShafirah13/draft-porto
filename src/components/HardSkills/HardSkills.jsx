@@ -86,6 +86,8 @@ function HardSkill() {
                 technical skills go beyond coding — they’re about understanding
                 problems and crafting efficient, meaningful solutions.
               </p>
+              
+
             </div>
 
             {/* kanan */}
@@ -97,6 +99,10 @@ function HardSkill() {
                 thrive in dynamic environments. I believe that positivity and
                 empathy are also key parts of professional success.
               </p>
+              
+                <h4>Time-Management</h4>
+                <h4>Empaty</h4>
+              
             </div>
           </div>
         </section>

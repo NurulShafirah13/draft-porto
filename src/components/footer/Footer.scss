@@ -4,15 +4,15 @@
   padding: 0.8rem 0;
   text-align: center;
   /* biar nempel full ke kanan dan kiri */
-  width: 100vw;
+  width: 100%;
   position: relative;
   // trik CSS untuk “keluar” dari batas container, 
   //jadi warnanya bisa full ke sisi kiri dan kanan layar.
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-
+  // left: 50%;
+  // right: 50%;
+  // margin-left: -50vw;
+  // margin-right: -50vw;
+  overflow-x: hidden; //biar ga melebar
 
 
   .footer-content {

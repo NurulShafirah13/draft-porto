@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <p className="footer-left">
-          &copy; {new Date().getFullYear()} Nurul Shafirah Ramadhani Portfolio
+          &copy; {new Date().getFullYear()} Nurul Shafirah Ramadhani Portofolio
           Website
         </p>
         <div className="footer-right">
