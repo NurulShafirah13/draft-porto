@@ -1,308 +1,271 @@
+// 🎨 Warna utama
+$primary-pink: #ff69b4;
+$soft-pink: #ffe4ec;
+$dark-pink: #d14783;
+$white: #fff;
+
+// ✨ Section utama
 .list-project {
-  padding: 5rem 3rem;
+  background: $soft-pink;
+  padding: 3rem 2rem 4rem;
   text-align: center;
-  background: #fff;
+  min-height: fit-content;
 
   .project-header {
+    margin-bottom: 2rem;
+
     h2 {
-      font-size: 2rem;
-      color: #e62183;
-      margin-bottom: 0.5rem;
+      color: $dark-pink;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 4rem 1rem;
     }
 
     p {
-      color: #666;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+      margin-top: -2rem;
+      color: darken($dark-pink, 10%);
+      font-size: 1.1rem;
     }
   }
 
-  /* grid layout */
-  .project-grid {
-    display: grid;
-    //repeatnya bikin pake angka, 
-    //kalau auto-fit nanti dia kek kurang rapih karena berusaha ngepasin cardnya
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-  }
-  /* biar tetap responsif */
-  //laptop
-@media (max-width: 992px) {
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* tablet: 2 kolom */
-  }
-}
-//phones
-@media (max-width: 600px) {
-  .project-grid {
-    grid-template-columns: 1fr; /* hp: 1 kolom */
-  }
-}
+  // 🎠 Carousel (react-slick)
+  .project-carousel {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 3.5rem;
 
-  /* project card */
+    .slick-slide {
+      padding: 0 10px;
+    }
+
+    .slick-prev,
+    .slick-next {
+      position: absolute;
+      bottom: 1.5rem;
+      background: $dark-pink;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      z-index: 5;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:before {
+        color: $white;
+        font-size: 1rem;
+        opacity: 1;
+      }
+
+      &:hover {
+        background: $primary-pink;
+      }
+    }
+
+    .slick-prev {
+      left: 48%;
+      transform: translateX(-150%);
+    }
+
+    .slick-next {
+      right: 48%;
+      transform: translateX(150%);
+    }
+
+    .slick-dots {
+      display: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .slick-prev,
+      .slick-next {
+        width: 34px;
+        height: 34px;
+        bottom: 1rem;
+      }
+
+      .slick-prev {
+        left: 46%;
+        transform: translateX(-140%);
+      }
+
+      .slick-next {
+        right: 46%;
+        transform: translateX(140%);
+      }
+    }
+  }
+
   .project-card {
-    background: #ffe6f0;
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(230, 33, 131, 0.15);
-    overflow: hidden;
+    background: $white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba($dark-pink, 0.2);
+    padding-bottom: 1rem;
     cursor: pointer;
-    margin: 0 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(230, 33, 131, 0.25);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba($dark-pink, 0.3);
     }
 
     img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-bottom: 4px solid #f48fb1;
+      border-radius: 1rem 1rem 0 0;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     h3 {
-      margin: 2px;
-      padding: 0.50rem;
-      color: #c2185b;
-      font-size: 1.5rem;
+      margin: 0.8rem 0 0.3rem;
+      color: $dark-pink;
+      font-size: 1.3rem;
       font-weight: 600;
     }
 
     p {
-      font-size: 1rem;
-      margin: 2px 5px;
-      padding: 0.50rem 1.3rem;
-      text-align: justify;
+      color: darken($dark-pink, 15%);
+      font-size: 0.95rem;
+      padding: 0 1rem;
     }
   }
 
-  /* modal scrollable */
-  .modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(255, 192, 203, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    backdrop-filter: blur(6px);
-    animation: fadeIn 0.3s ease;
-    cursor: zoom-out;
-
-    .modal-scroll {
-      background: #fff;
-      border-radius: 18px;
-      padding: 1.5rem;
-      max-width: 900px;
-      width: 90%;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 8px 20px rgba(230, 33, 131, 0.25);
-      animation: slideUp 0.3s ease;
-      cursor: default;
-
-      h2 {
-        color: #e62183;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .scroll-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-
-        img {
-          width: 100%;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          transition: transform 0.2s ease;
-
-          &:hover {
-            transform: scale(1.02);
-          }
-        }
-      }
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .project-card img {
-      height: 150px;
-    }
-
-    .modal-scroll {
-      padding: 1rem;
-    }
-  }
-}
-.modal-carousel {
-  margin-top: 1rem;
-
-  .carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      width: 100%;
-      max-height: 80vh;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.4s ease;
-    }
-
-    img:hover {
-      transform: scale(1.02);
-    }
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    color: #e62183;
-    font-size: 28px;
-  }
-
-  .slick-dots li button:before {
-    color: #e62183;
-  }
-
-  .slick-dots li.slick-active button:before {
-    color: #c2185b;
-  }
-}
-.project-carousel {
-  position: relative;
-  padding: 0 2rem 3rem; // ada jarak bawah buat tombol, tapi gak kebanyakan
-
-  .slick-slide {
-    padding: 0 1rem; // jarak antar slide
-  }
-
-  .project-card {
-    background: #ffe6f0;
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(230, 33, 131, 0.15);
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 1rem; // jarak antar card biar gak dempet
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(230, 33, 131, 0.25);
-    }
-
-    img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-bottom: 4px solid #f48fb1;
-    }
-
-    h3 {
-      margin: 0.2rem;
-      padding: 0.5rem;
-      color: #c2185b;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    p {
-      font-size: 1rem;
-      margin: 0.2rem 0.5rem;
-      padding: 0.5rem 1rem;
-      text-align: justify;
-    }
-  }
-
-  /* tombol panah carousel */
-  .slick-prev,
-  .slick-next {
-    position: absolute;
-    bottom: 0.2rem; // posisinya dekat titik navigasi (dots)
-    transform: translateY(50%);
-    z-index: 10;
-  }
-
-  .slick-prev {
-    left: 46%;
-  }
-
-  .slick-next {
-    right: 46%;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    color: #e62183;
-    font-size: 30px;
-    transition: color 0.3s ease;
-  }
-
-  .slick-prev:hover:before,
-  .slick-next:hover:before {
-    color: #c2185b;
-  }
-
-  /* dots (titik navigasi) */
-  .slick-dots {
-    bottom: -0.5rem;
-
-    li button:before {
-      color: #e62183;
-      opacity: 0.6;
-    }
-
-    li.slick-active button:before {
-      color: #c2185b;
-      opacity: 1;
-    }
-  }
-
-  /* responsif */
-  @media (max-width: 992px) {
-    .slick-prev {
-      left: 44%;
-    }
-    .slick-next {
-      right: 44%;
-    }
+  @media (max-width: 1024px) {
+    padding: 3rem 1rem;
   }
 
   @media (max-width: 600px) {
-    .project-card {
-      margin: 0 0.3rem;
-    }
-
-    .slick-prev {
-      left: 42%;
-    }
-
-    .slick-next {
-      right: 42%;
+    .project-card img {
+      height: 180px;
     }
   }
 }
+
+// 🌸 Modal (scrollable gallery dengan gambar besar)
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 80px 1rem 40px;
+
+  // 💡 perbaikan scroll di HP
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+
+  .modal-scroll {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    max-height: none; // biar gak kebatas di HP
+    overflow: visible;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+
+    h2 {
+      color: $dark-pink;
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .project-desc {
+      color: darken($dark-pink, 10%);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .scroll-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 10px rgba($dark-pink, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 6px 16px rgba($dark-pink, 0.35);
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $primary-pink;
+      border-radius: 4px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #ff3fa4;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.2);
+        color: #ff7fbf;
+      }
+    }
+  }
+
+  // biar tetap nyaman di HP
+  @media (max-width: 600px) {
+    padding-top: 60px;
+
+    .modal-scroll {
+      padding: 1.5rem;
+      width: 95%;
+      border-radius: 12px;
+    }
+  }
+}
+
+// ✨ Animasi modal
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// Note:
+// max-height: none di .modal-scroll biar tinggi modal bisa fleksibel di HP.
+// Tambahin overflow-y: auto di .modal (bukan di .modal-scroll lagi).
+// Gunakan -webkit-overflow-scrolling: touch; → biar scroll halus di iPhone.
+// overscroll-behavior: contain; biar nggak scroll body di belakang modal.
+// align-items: flex-start + padding-top → biar modal muncul dari tengah atas tapi gak ketutup navbar.

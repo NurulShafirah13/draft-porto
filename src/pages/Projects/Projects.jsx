@@ -1,14 +1,24 @@
-import LearningProject from "../../components/LearningProject/LearningProject"
+import LearningProject from "../../components/LearningProject/LearningProject";
 
+import About from "../../components/About/About";
 
-  const Projects = () => {
-    return (
-      <main className="project">
-        <LearningProject/>
-      </main>
+const Projects = () => {
+  return (
+    <>
+
+      <section className="learningProject">
+        <LearningProject />
+      </section>
+      <section>
+        <About/>
+      </section>
       
-    )
-  }
-    
+      
+
+
+    </>
+
+  );
+};
 
 export default Projects;

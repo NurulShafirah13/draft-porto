@@ -30,10 +30,11 @@ const LearningProject = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleCardClick = (project) => setSelectedProject(project);
+  const closeModal = () => setSelectedProject(null);
 
-  // carousel untuk grid utama
+  // 🎠 carousel utama
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 600,
     slidesToShow: 3,
@@ -54,7 +55,7 @@ const LearningProject = () => {
         <p>Some of my works and learning experiments 💻</p>
       </header>
 
-      {/* Carousel Grid */}
+      {/* 🎠 Carousel */}
       <Slider {...settings} className="project-carousel">
         {projects.map((project) => (
           <article
@@ -69,10 +70,11 @@ const LearningProject = () => {
         ))}
       </Slider>
 
-      {/* Modal Scrollable (tanpa carousel) */}
+      {/* 🌸 Modal Scrollable */}
       {selectedProject && (
-        <div className="modal" onClick={() => setSelectedProject(null)}>
+        <div className="modal" onClick={closeModal}>
           <div className="modal-scroll" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal}>✕</button>
             <h2>{selectedProject.name}</h2>
             <p className="project-desc">{selectedProject.desc}</p>
 
