@@ -1,12 +1,13 @@
 import React from "react";
-import "./certifInfo.scss";
+import "./workInfo.scss";
+import Sertif1 from "../../assets/images/sertif-1.JPG"
 
-const CertifInfo = () => {
+const WorkInfo = () => {
   const data = [
     {
       title: "Certificate One",
       subtitle: "Category: Achievement",
-      img: "https://assets.codepen.io/4787486/oak_1.jpg",
+      img: Sertif1,
       bg: "https://assets.codepen.io/4787486/trees.png",
       desc: `This certificate represents excellence in performance and dedication
              to learning. A reflection of consistent effort and creativity.`,
@@ -32,7 +33,7 @@ const CertifInfo = () => {
   return (
     <section className="certif-section">
       <header>
-        <h1>My Lovely Certificates 💖</h1>
+        <h1>My Work Experiences</h1>
       </header>
 
       <div className="certif-wrapper">
@@ -65,4 +66,4 @@ const CertifInfo = () => {
   );
 };
 
-export default CertifInfo;
+export default WorkInfo;

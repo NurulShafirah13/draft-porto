@@ -1,7 +1,8 @@
 /* ===== MAIN WRAPPER ===== */
 .skills {
   padding: 4rem 2rem 1rem; /* tambah ruang di atas & bawah */
-  background: #ffe4ec;
+  // background: #ffe4ec;
+  
 
   header {
     text-align: center;
@@ -123,76 +124,121 @@
   }
 }
 
-/* ===== DESCRIPTION SECTION (tanpa kotak, 2 kolom) ===== */
+/* ====== SOFT & HARD SKILL SECTION ===== */
 .soft-art-section {
-  margin-top: 2rem;
-  border-radius: 30px;
-  padding: 1rem 1rem 1rem;
-  background: linear-gradient(to bottom, #fff, #fff4fb);
+  position: relative;
+  max-width: 1100px;
+  margin: 4rem auto;
+  text-align: center;
 
   h2 {
-    margin-top: rem;
-    text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.3rem;
+    font-weight: 800;
     color: #e62183;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 
   .skills-description {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* dua kolomm */
-    justify-content: center;
-    gap: 4rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-
-    @media (max-width: 900px) {
-      grid-template-columns: 1fr; /* responsif ke satu kolom */
-      gap: 2rem;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 3rem;
+    position: relative;
   }
 
+  /* === floating text outside cards === */
   .text-content {
-    flex: 1;
-    min-width: 320px;
+    position: relative;
+    padding: 2rem;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(230, 33, 131, 0.08);
+    overflow: visible;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(230, 33, 131, 0.15);
+    }
 
     h3 {
-      font-size: 1.6rem;
-      color: #e62183;
-      margin-bottom: 0.8rem;
-      margin-top: 0.2rem;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #e62183;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(230, 33, 131, 0.3);
+      animation: floatText 4s ease-in-out infinite;
     }
 
     p {
-      font-size: 1.05rem;
-      line-height: 1.9;
-      color: #333;
+      font-size: 0.98rem;
+      color: #444;
       text-align: justify;
-      margin-bottom: 2rem;
-    }
-    li {
-      background-color: #e62183;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 50px;
-      margin: 5px;
-      font-size: 1rem;
-      // margin-top: 20px;
-      display: inline-block;
+      line-height: 1.6;
+      margin-top: 1.8rem;
+      margin-bottom: 1rem;
     }
 
-    /* garis pemisah halus */
-    &:first-child {
-      border-right: 2px solid rgba(230, 33, 131, 0.2);
-      padding-right: 2rem;
-
-      @media (max-width: 900px) {
-        border-right: none;
-        border-bottom: 2px solid rgba(230, 33, 131, 0.2);
-        padding-right: 0;
-        padding-bottom: 2rem;
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        background-color: #e62183;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 40px;
+        margin: 3px 4px;
+        font-size: 0.9rem;
+        display: inline-block;
+        white-space: nowrap;
       }
     }
+  }
+}
+
+/* === Animasi unik buat teks di luar box === */
+@keyframes floatText {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 992px) {
+  .skills-container {
+    gap: 2rem;
+  }
+  .soft-art-section .text-content h3 {
+    top: -25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills {
+    padding: 4rem 1rem;
+  }
+
+  .skill-items {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .soft-art-section .skills-description {
+    grid-template-columns: 1fr;
+  }
+
+  .soft-art-section h2 {
+    font-size: 1.8rem;
   }
 }

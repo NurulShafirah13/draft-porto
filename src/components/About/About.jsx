@@ -1,9 +1,51 @@
-import SplitText from '../../components/SplitText/SplitText'
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitText from '../../components/SplitText/SplitText';
 import './About.scss';
 
+gsap.registerPlugin(ScrollTrigger);
+
 function About() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    gsap.fromTo(
+      section.querySelector('header h2'),
+      { opacity: 0, x: 80 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      section.querySelector('article'),
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.4,
+        delay: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" ref={sectionRef}>
       <header>
         <h2 className="text-4xl font-bold text-pink-400">
           <SplitText text="About Me" />

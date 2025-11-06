@@ -1,0 +1,232 @@
+.certif-section {
+  background: linear-gradient(to right, #ffe6f2, #ffccf9);
+  padding: 6rem 3rem;
+  text-align: center;
+
+  header {
+    h1 {
+      color: #ff4da6;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  .certif-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .certif-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 4px solid transparent;
+    border-image: linear-gradient(45deg, #ff66b3, #ff99cc, #ffb3d9) 1;
+    box-shadow: 0 6px 18px rgba(255, 102, 178, 0.25);
+    transition: all 0.4s ease-in-out;
+    background: #fff;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-6px);
+    }
+
+    .overlay {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background: #ffb3d9;
+      z-index: 2;
+      transition: 0.4s ease-in-out;
+      overflow: hidden;
+      border-radius: 18px;
+
+      .overlay-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+        padding: 1.5rem 1rem;
+        color: #fff;
+        font-weight: 600;
+        text-align: left;
+        z-index: 3;
+
+        h2 {
+          font-size: 1.1rem;
+          margin-bottom: 0.4rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: #ffe6f2;
+        }
+      }
+
+      .image-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 55%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 0 18px 18px 0;
+        transition: 0.4s ease-in-out;
+        z-index: 1;
+      }
+    }
+
+    .text {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0%;
+      height: 100%;
+      background: #fff;
+      color: #333;
+      padding: 1.5rem;
+      overflow-y: auto;
+      transition: width 0.4s ease;
+      z-index: 1;
+
+      img.inset {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 0.8rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+    }
+
+    // efek hover elegan split di desktop
+    &:hover {
+      .overlay {
+        transform: translateX(-50%);
+      }
+
+      .text {
+        width: 50%;
+        z-index: 2;
+      }
+    }
+  }
+
+  // dots style cantik
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+    z-index: 10;
+    position: relative;
+
+    span {
+      width: 12px;
+      height: 12px;
+      background: #ff99cc;
+      border-radius: 50%;
+      transition: 0.3s;
+
+      &.active {
+        background: #ff4da6;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  /* responsive grid layout */
+  @media (max-width: 1024px) {
+    .certif-wrapper {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+  .certif-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    max-width: 95%;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: none;
+
+    .overlay {
+      position: relative;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      transform: none !important;
+      transition: none;
+      border-radius: 18px 18px 0 0;
+      z-index: 1;
+
+      .overlay-content {
+        width: 100%;
+        text-align: center;
+        padding: 1.2rem 1rem;
+      }
+
+      .image-content {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        border-radius: 0;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    .text {
+      position: relative;
+      width: 100%;
+      height: auto;
+      background: #fff;
+      color: #333;
+      border-top: 3px solid #ffb3d9;
+      padding: 1.2rem 1rem;
+      overflow: visible;
+      transition: none;
+      z-index: 2;
+
+      img.inset {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+
+    // matiin efek hover di mobile
+    &:hover {
+      transform: none;
+      .overlay {
+        transform: none;
+      }
+      .text {
+        width: 100%;
+      }
+    }
+  }
+}
+}

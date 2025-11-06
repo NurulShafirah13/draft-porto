@@ -1,6 +1,4 @@
-import React from "react";
-import Navbar from "../../components/navbar/Navbar";
-import CertifInfo from "../../components/CertifInfo/CertifInfo";
+import WorkInfo from "../../components/WorkInfo/WorkInfo";
 
 function Contact() {
   return (
@@ -11,9 +9,9 @@ function Contact() {
       <h3>pokoknya gua jago banget lebih jago dari bang jago</h3>
 
       </section> */}
-     
-       <section>
-        <CertifInfo/>
+
+      <section>
+        <WorkInfo />
       </section>
 
       {/* <p>LinkedIn: <a href="#">linkedin.com/in/nurulshafirah</a></p> */}
