@@ -1,11 +1,13 @@
-import React from "react";
+import SplitText from '../../components/SplitText/SplitText'
 import './About.scss';
 
 function About() {
   return (
     <section className="about" id="about">
       <header>
-        <h2>About Me</h2>
+        <h2 className="text-4xl font-bold text-pink-400">
+          <SplitText text="About Me" />
+        </h2>
       </header>
 
       <article>

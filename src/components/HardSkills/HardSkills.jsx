@@ -1,5 +1,6 @@
 import React from "react";
 import "./hardSkills.scss";
+import SplitText from '../SplitText/SplitText';
 
 function HardSkill() {
   const skills = [
@@ -37,7 +38,9 @@ function HardSkill() {
   return (
     <section className="skills">
       <header className="skills-header">
-        <h2>The Tools I’m Exploring and Growing With 🚀</h2>
+        <h2 className="text-4xl font-bold text-pink-400">
+          <SplitText text="The Tools I’m Exploring and Growing With 🚀" />
+        </h2>
         <p>
           I’m still in the process of learning and exploring new technologies.
           Every project I build helps me understand more about how things work — 
@@ -67,7 +70,10 @@ function HardSkill() {
         </div>
 
         <div className="soft-art-section">
-          <h2>About My Skills</h2>
+          <h2 className="text-4xl font-bold text-pink-400">
+          <SplitText text="About My Skills" />
+        </h2>
+          
 
           <div className="skills-description">
             <article className="text-content">

@@ -153,3 +153,18 @@
     }
   }
 }
+.split-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d14783;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  span {
+    display: inline-block;
+    will-change: transform, opacity;
+  }
+}
+

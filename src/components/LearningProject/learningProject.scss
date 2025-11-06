@@ -7,9 +7,11 @@ $white: #fff;
 // ✨ Section utama
 .list-project {
   background: $soft-pink;
-  padding: 3rem 2rem 4rem;
+  padding: 2.5rem 1rem;
   text-align: center;
-  min-height: fit-content;
+  // min-height: fit-content;
+  max-height: 100vh; // maksimal 80% dari tinggi viewport
+  overflow: hidden;
 
   .project-header {
     margin-bottom: 2rem;
