@@ -23,26 +23,29 @@ function Navbar() {
           <span></span>
         </div>
 
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <Link to="/" className="menu-item">
-            Home
-          </Link>
-          <li>
-            <Link to="/projects" className="menu-item">
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="/experiences" className="menu-item">
-              Work Experiences
-            </Link>
-          </li>
-          <li>
-            <Link to="/artSkills" className="menu-item">
-              Art Hobbies
-            </Link>
-          </li>
-        </ul>
+       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+  <li>
+    <Link to="/" className="menu-item" onClick={() => setMenuOpen(false)}>
+      Home
+    </Link>
+  </li>
+  <li>
+    <Link to="/projects" className="menu-item" onClick={() => setMenuOpen(false)}>
+      Projects
+    </Link>
+  </li>
+  <li>
+    <Link to="/experiences" className="menu-item" onClick={() => setMenuOpen(false)}>
+      Work Experiences
+    </Link>
+  </li>
+  <li>
+    <Link to="/artSkills" className="menu-item" onClick={() => setMenuOpen(false)}>
+      Art Hobbies
+    </Link>
+  </li>
+</ul>
+
       </div>
     </nav>
   );

@@ -1,232 +1,151 @@
-.certif-section {
-  background: linear-gradient(to right, #ffe6f2, #ffccf9);
-  padding: 6rem 3rem;
+.work-section {
+  padding: 2rem 2rem;
   text-align: center;
+  overflow: hidden;
 
   header {
-    h1 {
+    h2 {
       color: #ff4da6;
       font-size: 2rem;
-      margin-bottom: 2rem;
-      font-weight: 700;
-    }
-  }
-
-  .certif-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    width: 100%;
-  }
-
-  .certif-card {
-    position: relative;
-    width: 100%;
-    max-width: 380px;
-    height: 260px;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 4px solid transparent;
-    border-image: linear-gradient(45deg, #ff66b3, #ff99cc, #ffb3d9) 1;
-    box-shadow: 0 6px 18px rgba(255, 102, 178, 0.25);
-    transition: all 0.4s ease-in-out;
-    background: #fff;
-    cursor: pointer;
-
-    &:hover {
-      transform: translateY(-6px);
-    }
-
-    .overlay {
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       position: relative;
-      display: flex;
-      width: 100%;
-      height: 100%;
-      background: #ffb3d9;
-      z-index: 2;
-      transition: 0.4s ease-in-out;
-      overflow: hidden;
-      border-radius: 18px;
+      display: inline-block;
 
-      .overlay-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 45%;
-        padding: 1.5rem 1rem;
-        color: #fff;
-        font-weight: 600;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 3px;
+        left: 20%;
+        bottom: -10px;
+        border-radius: 2px;
+        // background: #ff4da6;
+      }
+    }
+  }
+
+  article {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; // biar rapi tengah
+      gap: 1.5rem; // jarak antar card default (desktop)
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      flex: 0 1 240px; // biar fleksibel tapi tetap seukuran
+      height: 320px;
+      background: #fff;
+      border-radius: 18px;
+      transform-style: preserve-3d;
+      transform: perspective(2000px);
+      transition: all 0.9s ease;
+      // box-shadow: inset 100px 0 50px rgba(255, 77, 166, 0.15),
+      //   0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+
+      &:hover {
+        z-index: 10;
+        transform: perspective(2000px);
+        // box-shadow: inset 20px 0 40px rgba(255, 77, 166, 0.3),
+        //   0 10px 30px rgba(255, 77, 166, 0.25);
+      }
+
+      .img-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(255, 77, 166, 0.3);
+        border-radius: 18px;
+        box-sizing: border-box;
+        transform-origin: left;
+        z-index: 1;
+        transition: transform 1s ease;
+
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          border-radius: 18px;
+        }
+      }
+
+      &:hover .img-container {
+        transform: rotateY(-135deg);
+      }
+
+      .card-details {
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        padding: 1.5rem;
+        color: #333;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
         text-align: left;
-        z-index: 3;
 
         h2 {
-          font-size: 1.1rem;
-          margin-bottom: 0.4rem;
+          margin: 0;
+          padding-bottom: 0.5em;
+          text-transform: uppercase;
+          font-size: 1.4em;
+          color: #ff4da6;
+          font-weight: 700;
         }
 
         p {
-          font-size: 0.9rem;
-          color: #ffe6f2;
+          margin: 0;
+          padding: 0;
+          line-height: 1.6;
+          font-size: 1em;
         }
       }
 
-      .image-content {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 55%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        border-radius: 0 18px 18px 0;
-        transition: 0.4s ease-in-out;
-        z-index: 1;
-      }
-    }
-
-    .text {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 0%;
-      height: 100%;
-      background: #fff;
-      color: #333;
-      padding: 1.5rem;
-      overflow-y: auto;
-      transition: width 0.4s ease;
-      z-index: 1;
-
-      img.inset {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 0.8rem;
-      }
-
-      p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-    }
-
-    // efek hover elegan split di desktop
-    &:hover {
-      .overlay {
-        transform: translateX(-50%);
-      }
-
-      .text {
-        width: 50%;
-        z-index: 2;
+      &:hover .card-details {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
 
-  // dots style cantik
-  .dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 0.5rem;
-    z-index: 10;
-    position: relative;
-
-    span {
-      width: 12px;
-      height: 12px;
-      background: #ff99cc;
-      border-radius: 50%;
-      transition: 0.3s;
-
-      &.active {
-        background: #ff4da6;
-        transform: scale(1.2);
-      }
-    }
-  }
-
-  /* responsive grid layout */
+  // ✨ Responsif biar pas di tablet & HP
   @media (max-width: 1024px) {
-    .certif-wrapper {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+    article .container {
+      gap: 1rem; // sedikit lebih rapat di tablet
     }
   }
 
   @media (max-width: 768px) {
-  .certif-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    max-width: 95%;
-    margin: 0 auto;
-    border-radius: 18px;
-    overflow: hidden;
-    transition: none;
-
-    .overlay {
-      position: relative;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      transform: none !important;
-      transition: none;
-      border-radius: 18px 18px 0 0;
-      z-index: 1;
-
-      .overlay-content {
-        width: 100%;
-        text-align: center;
-        padding: 1.2rem 1rem;
-      }
-
-      .image-content {
-        position: relative;
-        width: 100%;
-        height: 200px;
-        border-radius: 0;
-        background-size: cover;
-        background-position: center;
-      }
+    article .container {
+      justify-content: center;
+      gap: 0.75rem; // makin rapat di HP
     }
 
-    .text {
-      position: relative;
-      width: 100%;
-      height: auto;
-      background: #fff;
-      color: #333;
-      border-top: 3px solid #ffb3d9;
-      padding: 1.2rem 1rem;
-      overflow: visible;
-      transition: none;
-      z-index: 2;
-
-      img.inset {
-        width: 100%;
-        border-radius: 12px;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-    }
-
-    // matiin efek hover di mobile
-    &:hover {
-      transform: none;
-      .overlay {
-        transform: none;
-      }
-      .text {
-        width: 100%;
-      }
+    article .card {
+      flex: 0 1 160px; // lebar lebih kecil biar muat 2–3 di baris
+      height: 260px;
     }
   }
-}
+
+  @media (max-width: 480px) {
+    article .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    article .card {
+      width: 90%;
+      height: 280px;
+    }
+  }
 }
