@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "./learningProject.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SplitText from '../../components/SplitText/SplitText';
 
 import web1a from "../../assets/images/queen1.png";
 import web1b from "../../assets/images/queen2.png";
@@ -51,7 +52,13 @@ const LearningProject = () => {
   return (
     <section className="list-project">
       <header className="project-header">
-        <h2>My Learning Projects</h2>
+        <h2>
+          <SplitText
+            text="My Learning Projects"
+            color="#6cd46c"
+            className="project-title"
+          />
+        </h2>
         <p>Some of my works and learning experiments 💻</p>
       </header>
 

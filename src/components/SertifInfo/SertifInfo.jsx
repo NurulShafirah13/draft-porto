@@ -3,6 +3,7 @@ import "./sertifInfo.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Sertif1 from "../../assets/images/sertif-1.JPG";
+import SplitText from "../../components/SplitText/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,7 +99,13 @@ const WorkInfo = () => {
   return (
     <section className="certif-section">
       <header>
-        <h1>My Work Experiences</h1>
+        <h2>
+          <SplitText
+            text="My Work Experiences"
+            color="#6cd46c"
+            className="sertif-title"
+          />
+        </h2>
       </header>
 
       <div className="certif-wrapper">

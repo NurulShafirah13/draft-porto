@@ -38,8 +38,12 @@ function HardSkill() {
   return (
     <section className="skills">
       <header className="skills-header">
-        <h2 className="text-4xl font-bold text-pink-400">
-          <SplitText text="The Tools I’m Exploring and Growing With 🚀" />
+        <h2>
+          <SplitText
+            text="The Tools I’m Exploring and Growing With"
+            color="#6cd46c"
+            className="skills-title"
+          />
         </h2>
         <p>
           I’m still in the process of learning and exploring new technologies.
@@ -70,8 +74,12 @@ function HardSkill() {
         </div>
 
         <div className="soft-art-section">
-          <h2 className="text-4xl font-bold text-pink-400">
-          <SplitText text="About My Skills" />
+           <h2>
+          <SplitText
+            text="About My Skills"
+            color="#6cd46c"
+            className="skills-title"
+          />
         </h2>
           
 

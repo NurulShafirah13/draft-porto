@@ -6,14 +6,16 @@ import cssLogo from "../../assets/images/css-3.png";
 import "./Hero.scss";
 import SplitText from "../SplitText/SplitText";
 
-
-
 const Hero = () => {
   return (
     <section className="hero-container">
       <div className="hero-content">
-        <h2 className="text-4xl font-bold text-pink-400">
-          <SplitText text="Hi, I'm Shafirah" />
+        <h2>
+          <SplitText
+            text="Hi, I'm Shafirah"
+            color="#6cd46c"
+            className="hero-title"
+          />
         </h2>
 
         <p>

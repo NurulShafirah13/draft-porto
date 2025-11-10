@@ -1,0 +1,104 @@
+.process-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem; // jarak teks & gambar makin dekat
+  padding: 3rem 5%;
+  //   background: #fff;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .process-text {
+    flex: 1;
+    max-width: 500px;
+
+    .title {
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-style: normal;
+      color: #6cd46c;
+      text-shadow: 0 0 10px rgba(33, 230, 108, 0.25);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #6ba27f; // soft green
+      margin-bottom: 1.8rem;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .step {
+        // background: #fff0f7;
+        border-left: 5px solid #a7e3c0;
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        // transition: all 0.3s ease;
+        // box-shadow: 0 3px 10px rgba(255, 192, 203, 0.15);
+
+        // &:hover {
+        //   transform: translateX(6px);
+        //   background: #fef6fa;
+        // }
+
+        h3 {
+          font-size: 1.2rem;
+          color: #e06aa7;
+          margin-bottom: 0.3rem;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #555;
+        }
+      }
+    }
+  }
+
+  .process-image {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex: 1;
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .image-card img {
+        width: 250px;
+        border-radius: 18px;
+        object-fit: cover;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    .right-column img {
+      width: 220px;
+      height: 400px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+
+      .left-column,
+      .right-column img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

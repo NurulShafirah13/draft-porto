@@ -1,13 +1,10 @@
-// 🎨 Warna utama
-$primary-pink: #ff69b4;
-$soft-pink: #ffe4ec;
-$dark-pink: #d14783;
-$white: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 
 // ✨ Section utama
 .list-project {
-  background: $soft-pink;
-  padding: 2.5rem 1rem;
+  background: white;
+  padding: 1rem 1rem;
   text-align: center;
   // min-height: fit-content;
   max-height: 100vh; // maksimal 80% dari tinggi viewport
@@ -16,16 +13,20 @@ $white: #fff;
   .project-header {
     margin-bottom: 2rem;
 
-    h2 {
-      color: $dark-pink;
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin: 4rem 1rem;
+    h2  {
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
+      font-size: 2.5rem;
+      font-weight: 800;
+      font-style: normal;
+      color: #6cd46c;
+      text-shadow: 0 0 10px rgba(33, 230, 108, 0.25);
+      margin: 2.5rem 1rem;
     }
 
     p {
       margin-top: -2rem;
-      color: darken($dark-pink, 10%);
+      color: darken(#FF5F8F, 10%);
       font-size: 1.1rem;
     }
   }
@@ -45,7 +46,7 @@ $white: #fff;
     .slick-next {
       position: absolute;
       bottom: 1.5rem;
-      background: $dark-pink;
+      background: #FF5F8F;
       border-radius: 50%;
       width: 42px;
       height: 42px;
@@ -56,13 +57,13 @@ $white: #fff;
       transition: all 0.3s ease;
 
       &:before {
-        color: $white;
+        color: white;
         font-size: 1rem;
         opacity: 1;
       }
 
       &:hover {
-        background: $primary-pink;
+        background: rgb(199, 225, 168);
       }
     }
 
@@ -101,9 +102,9 @@ $white: #fff;
   }
 
   .project-card {
-    background: $white;
+    background: white;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba($dark-pink, 0.2);
+    box-shadow: 0 4px 12px rgba(#FF5F8F, 0.2);
     padding-bottom: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -111,7 +112,7 @@ $white: #fff;
 
     &:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba($dark-pink, 0.3);
+      box-shadow: 0 8px 20px rgba(#FF5F8F, 0.3);
     }
 
     img {
@@ -128,13 +129,13 @@ $white: #fff;
 
     h3 {
       margin: 0.8rem 0 0.3rem;
-      color: $dark-pink;
+      color: #FF5F8F;
       font-size: 1.3rem;
       font-weight: 600;
     }
 
     p {
-      color: darken($dark-pink, 15%);
+      color: darken(#FF5F8F, 15%);
       font-size: 0.95rem;
       padding: 0 1rem;
     }
@@ -181,14 +182,14 @@ $white: #fff;
     animation: fadeIn 0.3s ease-in-out;
 
     h2 {
-      color: $dark-pink;
+      color: #FF5F8F;
       margin-bottom: 0.5rem;
       font-size: 1.8rem;
       text-align: center;
     }
 
     .project-desc {
-      color: darken($dark-pink, 10%);
+      color: darken(#FF5F8F, 10%);
       margin-bottom: 1.5rem;
       font-size: 1rem;
       text-align: center;
@@ -204,12 +205,12 @@ $white: #fff;
         max-height: 80vh;
         object-fit: contain;
         border-radius: 0.75rem;
-        box-shadow: 0 4px 10px rgba($dark-pink, 0.25);
+        box-shadow: 0 4px 10px rgba(#FF5F8F, 0.25);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &:hover {
           transform: scale(1.02);
-          box-shadow: 0 6px 16px rgba($dark-pink, 0.35);
+          box-shadow: 0 6px 16px rgba(#FF5F8F, 0.35);
         }
       }
     }
@@ -218,7 +219,7 @@ $white: #fff;
       width: 8px;
     }
     &::-webkit-scrollbar-thumb {
-      background: $primary-pink;
+      background: #FF5F8F;
       border-radius: 4px;
     }
 

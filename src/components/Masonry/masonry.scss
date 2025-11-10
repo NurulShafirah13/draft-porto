@@ -1,0 +1,109 @@
+.masonryGallery-section {
+  width: 100%;
+  padding: 2rem 2rem;
+  background: radial-gradient(circle,rgba(240, 194, 213, 1) 0%, rgba(226, 247, 218, 1) 100%);
+
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  .masonryGallery-title {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: normal;
+    color: #6cd46c;
+    text-shadow: 0 0 10px rgba(33, 230, 108, 0.25);
+    margin-bottom: 0.5rem;
+  }
+
+  .masonryGallery-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3rem;
+  }
+}
+
+.masonryGallery-grid {
+  column-count: 4;
+  column-gap: 1.2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+
+  @media (max-width: 1100px) {
+    column-count: 3;
+  }
+
+  @media (max-width: 800px) {
+    column-count: 2;
+  }
+
+  @media (max-width: 500px) {
+    column-count: 1;
+  }
+}
+
+.masonryGallery-item {
+  position: relative;
+  margin-bottom: 1.2rem;
+  break-inside: avoid;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .masonryGallery-img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.6s ease;
+    filter: brightness(95%);
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(80%);
+    }
+  }
+
+  .masonryGallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 1.2rem;
+    border-radius: 16px;
+
+    h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #f3f3f3;
+      line-height: 1.3;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover .masonryGallery-overlay {
+    opacity: 1;
+  }
+}
