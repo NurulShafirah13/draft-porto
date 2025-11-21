@@ -1,274 +1,371 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap");
 
+.project-part {
 
-// ✨ Section utama
-.list-project {
-  background: white;
-  padding: 1rem 1rem;
-  text-align: center;
-  // min-height: fit-content;
-  max-height: 100vh; // maksimal 80% dari tinggi viewport
-  overflow: hidden;
+  font-family: "Lora", serif;
+  padding: 1rem 3rem 5rem;
+  position: relative;
+  overflow-x: hidden;
 
+   /* ✨ Pola background dots */
+  &::before {
+    content: "";
+    position: absolute; /* ⬅️ dari absolute jadi fixed, biar gak dobel */
+    inset: 0;
+    background-image: radial-gradient(#dd889d 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.35;
+    z-index: -1; /* ⬅️ di bawah semua */
+    pointer-events: none; /* ⬅️ biar gak ganggu klik */
+  }
+
+  /* ===== GARIS DEKORASI BAWAH ===== */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(
+      90deg,
+      #323132 0px,
+      #333232 80px,
+      transparent 80px,
+      transparent 100px
+    );
+    opacity: 0.9;
+    border-top: 3px solid #7b8d7d;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* ===== HEADER ===== */
   .project-header {
-    margin-bottom: 2rem;
+    text-align: center;
+    margin-bottom: clamp(0.6rem, 1.5vw, 1rem);
+    position: relative;
 
-    h2  {
-      font-family: "Lora", serif;
-      font-optical-sizing: auto;
-      font-size: 2.5rem;
-      font-weight: 800;
-      font-style: normal;
-      color: #6cd46c;
-      text-shadow: 0 0 10px rgba(33, 230, 108, 0.25);
-      margin: 2.5rem 1rem;
+    h1 {
+      font-family: "MonteCarlo", cursive;
+      font-size: clamp(4.5rem, 5vw, 3rem);
+      color: #e62183;
+      text-shadow: 2px 2px 0 #deb5cd;
+      line-height: 1;
+      margin-bottom: 2.5rem;
+      margin-top: 0.3rem;
     }
 
-    p {
-      margin-top: -2rem;
-      color: darken(#FF5F8F, 10%);
-      font-size: 1.1rem;
+    .decor-line {
+      border-top: 3px solid #7b8d7d;
+      border-bottom: 1px solid #7b8d7d;
+      height: 4px;
+      width: 100%;
+      margin: 1rem auto;
     }
   }
 
-  // 🎠 Carousel (react-slick)
-  .project-carousel {
+  /* ===== SUBHEAD ===== */
+  .subhead {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    letter-spacing: 1px;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 600;
+    color: #3b3b3b;
+    border-bottom: 1px solid #b3d8a5;
+    padding-bottom: 0.3rem;
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  /* ===== LAYOUT ===== */
+  .project-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: clamp(2rem, 3vw, 3rem);
+    align-items: start;
     position: relative;
-    width: 90%;
-    margin: 0 auto;
-    padding-bottom: 3.5rem;
 
-    .slick-slide {
-      padding: 0 10px;
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
     }
+  }
 
-    .slick-prev,
-    .slick-next {
+  /* ===== ARTIKEL ===== */
+  .article {
+    background: transparent;
+    padding: clamp(0.3rem, 1.5vw, 2rem);
+    border: none;
+    max-width: 450px;
+    margin-left: auto;
+    position: relative;
+
+    /* 💖 GARIS PEMBATAS DI KANAN ARTICLE */
+    &::after {
+      content: "";
       position: absolute;
-      bottom: 1.5rem;
-      background: #FF5F8F;
-      border-radius: 50%;
-      width: 42px;
-      height: 42px;
-      z-index: 5;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-
-      &:before {
-        color: white;
-        font-size: 1rem;
-        opacity: 1;
-      }
-
-      &:hover {
-        background: rgb(199, 225, 168);
-      }
+      top: 0;
+      right: -1.5rem; /* jarak antar kolom */
+      width: 1.5px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+      
+        #6a6969 15%,
+        #6a6969 85%,
+       
+      );
+      opacity: 0.5;
     }
 
-    .slick-prev {
-      left: 48%;
-      transform: translateX(-150%);
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      font-weight: 700;
+      color: #1d881d;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid #a75569;
+      display: inline-block;
     }
 
-    .slick-next {
-      right: 48%;
-      transform: translateX(150%);
+    p {
+      text-indent: 1rem;
+      line-height: 1.8;
+      color: #3b2e1b;
+      font-size: clamp(0.9rem, 1vw, 1rem);
+      margin-top: 0.3rem;
+      text-align: justify;
+    }
+
+    @media (max-width: 900px) {
+      &::after {
+        display: none; /* biar ga ganggu pas mobile */
+      }
+    }
+  }
+
+  /* ===== CAROUSEL ===== */
+  .project-carousel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .carousel-item {
+      text-align: center;
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid #d194ba;
+        margin-bottom: 0.8rem;
+        max-height: clamp(200px, 30vw, 400px);
+      }
+
+      h4 {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: #e62183;
+        font-size: clamp(0.9rem, 1vw, 1rem);
+        margin-bottom: 0.3rem;
+      }
+
+      p {
+        color: #5b4630;
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
+        line-height: 1.5;
+      }
     }
 
     .slick-dots {
       display: none !important;
     }
 
-    @media (max-width: 768px) {
-      .slick-prev,
-      .slick-next {
-        width: 34px;
-        height: 34px;
-        bottom: 1rem;
-      }
-
-      .slick-prev {
-        left: 46%;
-        transform: translateX(-140%);
-      }
-
-      .slick-next {
-        right: 46%;
-        transform: translateX(140%);
-      }
-    }
-  }
-
-  .project-card {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(#FF5F8F, 0.2);
-    padding-bottom: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(#FF5F8F, 0.3);
-    }
-
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 1rem 1rem 0 0;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
-
-    h3 {
-      margin: 0.8rem 0 0.3rem;
-      color: #FF5F8F;
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-
-    p {
-      color: darken(#FF5F8F, 15%);
-      font-size: 0.95rem;
-      padding: 0 1rem;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    padding: 3rem 1rem;
-  }
-
-  @media (max-width: 600px) {
-    .project-card img {
-      height: 180px;
-    }
-  }
-}
-
-// 🌸 Modal (scrollable gallery dengan gambar besar)
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  z-index: 9999;
-  overflow-y: auto;
-  padding: 80px 1rem 40px;
-
-  // 💡 perbaikan scroll di HP
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-
-  .modal-scroll {
-    background: #fff;
-    border-radius: 16px;
-    padding: 2rem;
-    max-width: 800px;
-    width: 100%;
-    max-height: none; // biar gak kebatas di HP
-    overflow: visible;
-    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4);
-    position: relative;
-    animation: fadeIn 0.3s ease-in-out;
-
-    h2 {
-      color: #FF5F8F;
-      margin-bottom: 0.5rem;
-      font-size: 1.8rem;
-      text-align: center;
-    }
-
-    .project-desc {
-      color: darken(#FF5F8F, 10%);
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      text-align: center;
-    }
-
-    .scroll-content {
+    /* ===== NAV BUTTONS DI BAWAH CARD ===== */
+    .carousel-nav {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
 
-      img {
-        width: 100%;
-        max-height: 80vh;
-        object-fit: contain;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 10px rgba(#FF5F8F, 0.25);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      button {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 2px solid #ceead1;
+        background: #e62183;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
         &:hover {
-          transform: scale(1.02);
-          box-shadow: 0 6px 16px rgba(#FF5F8F, 0.35);
+          background: #7b8d7d;
+          transform: scale(1.1);
+        }
+
+        &.prev::before {
+          content: "◀";
+        }
+        &.next::before {
+          content: "▶";
         }
       }
     }
+  }
 
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: #FF5F8F;
-      border-radius: 4px;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: #ff3fa4;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-
-      &:hover {
-        transform: scale(1.2);
-        color: #ff7fbf;
-      }
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .project-carousel .carousel-nav button {
+      width: 32px;
+      height: 32px;
+      font-size: 0.9rem;
     }
   }
 
-  // biar tetap nyaman di HP
-  @media (max-width: 600px) {
-    padding-top: 60px;
-
-    .modal-scroll {
-      padding: 1.5rem;
-      width: 95%;
-      border-radius: 12px;
+  @media (max-width: 480px) {
+    .project-carousel .carousel-nav button {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
     }
   }
 }
+/* ===== MODAL GALLERY ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998 !important; // overlay paling belakang tapi tetap di atas page
+}
 
-// ✨ Animasi modal
+.modal-container {
+  background: white;
+  width: 80%;
+  max-width: 900px;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  position: relative;
+  z-index: 9999 !important; // modal-nya sendiri
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  cursor: pointer;
+  color: #ff3b8d;
+  font-weight: bold;
+  z-index: 10000 !important; // paling depan biar ga ketutupan
+  transition: 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.2);
+}
+
+
+/* ===== MODAL CONTENT (fix close button ketutupan) ===== */
+.modal-content {
+  background: #fffdfd;
+  border-radius: 12px;
+  padding: 2rem 2rem 2rem; /* padding atas diperbesar untuk ruang close button */
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.35s ease;
+  margin: 2rem auto; /* mencegah modal nempel ke atas */
+}
+
+.modal-content h2 {
+  font-family: "MonteCarlo", cursive;
+  font-size: 2.8rem;
+  color: #e62183;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.modal-desc {
+  font-family: "Lora", serif;
+  text-align: center;
+  color: #6b4a3c;
+  margin-bottom: 1.2rem;
+}
+
+.modal-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d194ba;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CLOSE BUTTON (selalu terlihat) ===== */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e62183;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 50; /* biar di atas konten modal */
+}
+
+.close-btn:hover {
+  background: #7b8d7d;
+  transform: scale(1.1);
+}
+
+/* ✨ Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-
-// Note:
-// max-height: none di .modal-scroll biar tinggi modal bisa fleksibel di HP.
-// Tambahin overflow-y: auto di .modal (bukan di .modal-scroll lagi).
-// Gunakan -webkit-overflow-scrolling: touch; → biar scroll halus di iPhone.
-// overscroll-behavior: contain; biar nggak scroll body di belakang modal.
-// align-items: flex-start + padding-top → biar modal muncul dari tengah atas tapi gak ketutup navbar.
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

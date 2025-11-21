@@ -2,12 +2,20 @@ import React, { useState, useEffect } from "react";
 import "./sertifInfo.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Sertif1 from "../../assets/images/sertif-1.JPG";
+import Sertif1 from "../../assets/images/sertif/sertif-sema1.JPG";
+import Sertif2 from "../../assets/images/sertif/sertif-bangkit.jpg";
+import Sertif3 from "../../assets/images/sertif/sertif-pragma1.jpg";
+import Sertif4 from "../../assets/images/sertif/sertif-tfd.jpg";
+import Sertif5 from "../../assets/images/sertif/sertif-sema2.jpg";
+import Sertif6 from "../../assets/images/sertif/sertif-asdos.jpg";
+import Sertif7 from "../../assets/images/sertif/sertif-bpjs.jpg";
+import Sertif8 from "../../assets/images/sertif/sertif-coursera.jpg";
+
 import SplitText from "../../components/SplitText/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WorkInfo = () => {
+const SertifInfo = () => {
   const [visibleCount, setVisibleCount] = useState(3);
 
   useEffect(() => {
@@ -33,58 +41,52 @@ const WorkInfo = () => {
 
   const data = [
     {
-      title: "Certificate One",
-      subtitle: "Achievement",
+      title: "Certificate of Organization",
+      subtitle: "Leadership & Organizational Achievements",
       img: Sertif1,
-      desc: "Awarded for excellence and dedication to learning.",
+      desc: "Recognized for serving as Co-Secretary in a faculty-level student organization.",
     },
     {
-      title: "Certificate Two",
+      title: "Certificate of Completion",
       subtitle: "Project",
-      img: Sertif1,
-      desc: "Outstanding contribution in innovation and design.",
+      img: Sertif2,
+      desc: "Acknowledged for outstanding collaboration in team-based academic and creative projects.",
     },
     {
-      title: "Certificate Three",
+      title: "Certificate of Competition and Contribution",
       subtitle: "Leadership",
-      img: Sertif1,
-      desc: "Leadership and collaboration in creative projects.",
+      img: Sertif3,
+      desc: "Awarded for demonstrating project and teamwork in creative project initiatives.",
     },
     {
-      title: "Certificate Four",
+      title: "Certificate of Exam",
       subtitle: "Creativity",
-      img: Sertif1,
-      desc: "Recognized for creative problem-solving.",
+      img: Sertif4,
+      desc: "Successfully passed the TensorFlow Developer Certificate examination.",
     },
     {
-      title: "Certificate Five",
+      title: "Certificate of Organization",
       subtitle: "Innovation",
-      img: Sertif1,
-      desc: "Innovation and continuous learning.",
+      img: Sertif5,
+      desc: "Recognized for contributing as Secretary within the faculty organization.",
     },
     {
-      title: "Certificate Six",
+      title: "Certificate of Appreciation",
       subtitle: "Professionalism",
-      img: Sertif1,
-      desc: "Commitment to growth and excellence.",
+      img: Sertif6,
+      desc: "Appreciated for serving as a Teaching Assistant in the Database course.",
     },
     {
-      title: "Certificate Seven",
+      title: "Certificate of Professional Training & Internship",
       subtitle: "Excellence",
-      img: Sertif1,
-      desc: "Achievement in academic excellence.",
+      img: Sertif7,
+      desc: "Awarded for completing an internship program at BPJS Kesehatan with notable performance.",
     },
     {
-      title: "Certificate Eight",
+      title: "Certificate of Learning & Skill Development",
       subtitle: "Teamwork",
-      img: Sertif1,
-      desc: "Outstanding collaboration in team projects.",
-    },
-    {
-      title: "Certificate Nine",
-      subtitle: "Dedication",
-      img: Sertif1,
-      desc: "Consistency and commitment to quality work.",
+      img: Sertif8,
+      desc: "Completed a Cloud Computing specialization course on Coursera.",
     },
   ];
 
@@ -98,14 +100,21 @@ const WorkInfo = () => {
 
   return (
     <section className="certif-section">
-      <header>
-        <h2>
-          <SplitText
-            text="My Work Experiences"
-            color="#6cd46c"
-            className="sertif-title"
-          />
-        </h2>
+      <header className="mag-header">
+        {/* Baris 1 — teks + garis kiri kanan */}
+        <div className="line-title">
+          <span>My Certificates</span>
+        </div>
+
+        {/* Baris 2 & 3 */}
+        <div className="line-full"></div>
+        <div className="line-full"></div>
+
+        {/* Baris 4 — judul besar */}
+        <h2>A Gallery of Accomplishments</h2>
+
+        {/* Baris 5 */}
+        <div className="line-full"></div>
       </header>
 
       <div className="certif-wrapper">
@@ -130,4 +139,4 @@ const WorkInfo = () => {
   );
 };
 
-export default WorkInfo;
+export default SertifInfo;

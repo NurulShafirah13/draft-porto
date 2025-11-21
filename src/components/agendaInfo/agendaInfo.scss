@@ -1,0 +1,231 @@
+.agenda-page {
+  position: relative;
+  width: 100%;
+}
+
+.agenda-text::first-letter {
+  font-size: 3rem;
+  font-weight: bold;
+  float: left;
+  line-height: 1;
+  margin-right: 0.5rem;
+  color: #e13d69;
+}
+
+/* ===========================
+   AGENDA CONTAINER
+   =========================== */
+.agenda-mag {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 1;
+  padding: 2rem;
+  position: relative;
+  font-family: "Lora", serif;
+}
+
+//background dots
+.agenda-mag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#dd889d 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===========================
+   1) TOP SECTION (2 FOTO + TEKS)
+   =========================== */
+.agenda-top {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.agenda-left {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+
+.left-img {
+  transition: opacity .6s ease, transform .6s ease;
+  opacity: 1;
+  transform: translateY(0); 
+}
+
+.left-img.not-visible {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.left-img.visible:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.left-img.visible:nth-child(2) {
+  transform: translateY(60px);
+}
+
+.left-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;    /* tidak crop */
+  border-radius: 12px;
+  filter: sepia(15%) contrast(105%);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* TEXT AREA */
+.agenda-middle {
+  padding-right: 3rem;
+}
+
+.agenda-title {
+  font-family: "Didot", "Playfair Display", serif; // font serif elegan
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #6cd46c;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+
+  span {
+    display: inline-block;
+  }
+
+  span:first-child {
+    font-size: 2.2rem; // kata kecil
+    font-weight: 400;
+  }
+
+  span:nth-child(2) {
+    font-size: 3.5rem; // kata besar
+    font-weight: 700;
+  }
+
+  span:last-child {
+    font-size: 3rem; // tanda tanya
+    font-weight: 400;
+  }
+}
+
+
+.agenda-text {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+
+/* ===========================
+   2) SCROLL SECTION (default: desktop = grid)
+   =========================== */
+.agenda-scroll {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* tampil 4 gambar rapi */
+  gap: 2rem;
+  overflow: visible; /* tidak ada scroll */
+  padding-bottom: 0;
+}
+
+.scroll-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  // filter: sepia(10%) contrast(105%);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
+/* ===========================
+   RESPONSIVE (aktifkan scroll lagi)
+   =========================== */
+@media (max-width: 900px) {
+  .agenda-scroll {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;   /* scroll aktif lagi */
+    padding-bottom: 1rem;
+  }
+
+  .scroll-img {
+    min-width: 220px;
+  }
+
+  .scroll-img img {
+    height: 300px;
+  }
+}
+
+//* RESPONSIVE */
+@media (max-width: 900px) {
+
+  .agenda-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .agenda-left {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Agar teks tidak kepotong */
+  .agenda-middle {
+    padding-left: 0;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .agenda-title {
+    font-size: 2.3rem;
+  }
+
+  .agenda-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .scroll-img img {
+    height: 300px; /* lebih pendek biar tidak terlalu panjang di HP */
+  }
+}
+
+/* HP kecil (extra small) */
+@media (max-width: 500px) {
+
+  .agenda-left {
+    grid-template-columns: 1fr; /* 1 kolom saja supaya rapi */
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .agenda-title {
+    font-size: 2rem;
+  }
+
+  .agenda-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .agenda-mag {
+    padding: 1.5rem;
+  }
+}

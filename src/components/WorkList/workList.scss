@@ -1,20 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+/* IMPORT FONT MAGAZINE */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap");
+
 .worklist-section {
   padding: 1rem 10%;
   background: #fff;
 
+  /* === TITLE / HEADER ALA MAJALAH === */
   h2 {
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-size: 2.5rem;
-    font-weight: 800;
-    font-style: normal;
-    color: #6cd46c;
+   text-align: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 4rem;
+  color: #d14783;
     text-shadow: 0 0 10px rgba(33, 230, 108, 0.25);
+    letter-spacing: 2px;                      /* efek cover magazine */
   }
 
   .section-title {
-    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;   /* ← berubah */
+    font-size: 2.6rem;
     font-weight: 700;
     margin-bottom: 2rem;
     color: #ff4da6;
@@ -29,7 +32,7 @@
     gap: 3rem;
     align-items: flex-start;
 
-    // === LEFT SIDEBAR ===
+    /* === LEFT SIDEBAR === */
     .worklist-sidebar {
       display: flex;
       flex-direction: column;
@@ -41,13 +44,15 @@
       .worklist-btn {
         background: none;
         border: none;
-        font-size: 1.5rem;
-        font-weight: 500;
+        font-family: "Cormorant Garamond", serif;  /* ← editorial magazine */
+        font-size: 1.6rem;
+        font-weight: 400;
         text-align: left;
         color: #999;
         cursor: pointer;
         transition: all 0.3s ease;
         position: relative;
+        letter-spacing: 0.5px; /* aesthetic */
 
         &:hover {
           color: #ff6fa7;
@@ -56,26 +61,13 @@
 
         &.active {
           color: #ff4f90;
-          font-weight: 700;
+          font-weight: 600;
           text-shadow: 0 0 8px rgba(255, 111, 167, 0.4);
-
-          &::before {
-            content: "";
-            position: absolute;
-            left: -1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(180deg, #ff8cb0, #ff4f90);
-            border-radius: 4px;
-            box-shadow: 0 0 6px rgba(255, 79, 144, 0.6);
-          }
         }
       }
     }
 
-    // === RIGHT DETAILS ===
+    /* === RIGHT DETAILS === */
     .worklist-details {
       flex: 1;
       color: #333;
@@ -87,8 +79,10 @@
       margin: -1rem 2rem;
       transition: all 0.5s ease;
 
+      /* === ROLE / COMPANY === */
       h3 {
-        font-size: 1.6rem;
+        font-family: "Playfair Display", serif;   /* ← elegant magazine */
+        font-size: 1.7rem;
         font-weight: 600;
         margin-bottom: 0.3rem;
 
@@ -98,9 +92,11 @@
       }
 
       .date {
+        font-family: "Lora", serif;              /* tetap soft & readable */
         color: #9d9595;
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 1.3rem;
+        font-style: italic;
       }
 
       ul {
@@ -113,10 +109,9 @@
           align-items: flex-start;
           margin-bottom: 1.2rem;
           line-height: 1.7;
-          font-size: 1.4rem;
+          font-size: 1.3rem;
+          font-family: "Lora", serif;          /* teks utama */
           text-align: justify;
-          word-break: break-word;
-          overflow-wrap: break-word;
 
           .check {
             color: #b4eba1;
@@ -124,68 +119,12 @@
             font-weight: 700;
             font-size: 1.2rem;
             transform: translateY(3px);
-            flex-shrink: 0;
           }
         }
       }
 
-      /* animasi pas muncul */
       &.animate {
         animation: fadeSlideIn 0.6s ease forwards;
-      }
-    }
-  }
-}
-
-/* ANIMATIONS */
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .worklist-section {
-    padding: 3rem 1.5rem;
-
-    .worklist-container {
-      flex-direction: column;
-      gap: 2rem;
-
-      .worklist-sidebar {
-        width: 100%;
-        border-left: none;
-        border-top: 2px solid #b1ea88;
-        padding: 1rem 0 0 0;
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-
-        .worklist-btn {
-          font-size: 1.2rem;
-          padding: 0.5rem 1rem;
-        }
-      }
-
-      .worklist-details {
-        padding: 1.5rem 1.8rem;
-        background: #fff8fb;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(255, 143, 180, 0.2);
-        animation: fadeSlideIn 0.7s ease forwards;
-
-        ul li {
-          font-size: 1.15rem;
-          line-height: 1.8;
-          text-align: left;
-          margin-bottom: 1.3rem;
-        }
       }
     }
   }

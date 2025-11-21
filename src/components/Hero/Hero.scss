@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap");
+
+
+
 
 .hero-container {
   width: 100%;
@@ -11,8 +15,8 @@
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  // font-family: "Poppins", sans-serif;
 
+  /* ✨ Pola background seperti tekstur dots majalah */
   &::before {
     content: "";
     position: absolute;
@@ -20,113 +24,224 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(#ffd6e0 1px, transparent 1px);
+    background-image: radial-gradient(#dd889d 1px, transparent 1px);
     background-size: 30px 30px;
     opacity: 0.4;
     z-index: 0;
   }
+
+  /* ✨ garis bawah majalah elegan penuh */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-linear-gradient(
+      90deg,
+      #3e2c2c 0px,
+      #3e2c2c 80px,
+      transparent 80px,
+      transparent 100px
+    );
+    opacity: 0.9;
+    border-top: 3px solid #3e2c2c;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 }
 
+/* === BAGIAN TEKS === */
 .hero-content {
-  max-width: 500px;
+  max-width: 520px;
   z-index: 2;
   text-align: left;
+  position: relative;
+
+  /* Aksen kecil seperti label majalah */
+  &::before {
+    content: "• PORTFOLIO •";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    font-family: "Lora", serif;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #999;
+    text-transform: uppercase;
+  }
 
   h2 {
-     font-family: "Great Vibes", cursive;
-  font-weight: 550;
-  font-size: 72px;
-  font-style: normal;
+    font-family: "Great Vibes", cursive;
+    font-weight: 550;
+    font-size: 72px;
     color: #d14783;
     margin-bottom: 15px;
     letter-spacing: 1px;
     text-shadow: 1px 1px 4px rgba(255, 192, 203, 0.5);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      font-family: "Lora", serif;
+      font-size: 0.6rem;
+      color: #777;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
   }
 
+  /* ✨ Paragraf seperti tagline cover majalah */
   p {
-    font-size: 1.3rem;
+    font-family: "Lora", serif;
+    font-size: 1.2rem;
     color: #444;
-    line-height: 1.6;
+    line-height: 1.7;
     font-weight: 400;
+    margin-top: 2.5rem;
     text-align: justify;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(209, 71, 131, 0.2);
+
+    /* Dropcap elegan */
+    &::first-letter {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #d14783;
+      float: left;
+      margin-right: 10px;
+      line-height: 1;
+       font-family: "Playfair Display", serif;
+    }
+
+    /* aksen miring lembut di belakang teks */
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      font-family: "Lora", serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #999;
+      letter-spacing: 2px;
+    }
   }
 
   h4 {
     background-color: #6cd46c;
     border-radius: 50px;
-    padding: 6px 12px;
-    margin: 10px -5px;
+    padding: 6px 14px;
+    margin: 20px 0;
     display: inline-block;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(108, 212, 108, 0.3);
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: #5bb75b;
+    }
   }
 }
 
+/* === GAMBAR === */
 .hero-image {
   position: relative;
   z-index: 2;
+  display: inline-block;
 
   .queen {
-    width: 250px;
-    height: 250px;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    border: 4px solid #fff;
-    position: relative;
-    z-index: 2;
-    transition: transform 0.4s ease;
-  }
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  
+  border: 30px solid transparent;
+  border-image: radial-gradient(circle, rgb(240, 64, 137) 0%, rgba(226, 247, 218, 1) 100%);
+  border-image-slice: 1;
 
-  .queen:hover {
-    transform: rotate(-3deg) scale(1.05);
-  }
+  border-radius: 0;
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    background: radial-gradient(
-      circle,
-      rgba(237, 202, 218, 1) 0%,
-      rgba(227, 211, 211, 1) 55%,
-      rgba(178, 212, 178, 1) 100%
+
+
+    /* 🌊 Efek pinggiran perangko zig-zag */
+    clip-path: polygon(
+      0% 5%, 5% 0%, 10% 5%, 15% 0%, 20% 5%, 25% 0%, 30% 5%, 35% 0%, 40% 5%, 45% 0%,
+      50% 5%, 55% 0%, 60% 5%, 65% 0%, 70% 5%, 75% 0%, 80% 5%, 85% 0%, 90% 5%, 95% 0%,
+      100% 5%, 95% 10%, 100% 15%, 95% 20%, 100% 25%, 95% 30%, 100% 35%, 95% 40%, 
+      100% 45%, 95% 50%, 100% 55%, 95% 60%, 100% 65%, 95% 70%, 100% 75%, 95% 80%, 
+      100% 85%, 95% 90%, 100% 95%, 95% 100%, 90% 95%, 85% 100%, 80% 95%, 75% 100%, 
+      70% 95%, 65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%, 35% 100%, 
+      30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%, 5% 100%, 0% 95%, 5% 90%, 0% 85%, 
+      5% 80%, 0% 75%, 5% 70%, 0% 65%, 5% 60%, 0% 55%, 5% 50%, 0% 45%, 5% 40%, 0% 35%, 
+      5% 30%, 0% 25%, 5% 20%, 0% 15%, 5% 10%, 0% 5%
     );
-    z-index: 1;
-    transform: rotate(-6deg);
+
+    &:hover {
+      transform: rotate(-2deg) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
   }
 
-  img.react-logo,
-  img.js-logo,
-  img.css-logo {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    animation: float 3s ease-in-out infinite;
-  }
 
-  .react-logo {
-    top: -40px;
-    right: -80px;
-  }
 
-  .js-logo {
-    bottom: -40px;
-    left: -80px;
-    animation-delay: 1s;
-  }
+  /* 🌸 Frame pastel miring di belakang */
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: -20px;
+  //   left: -20px;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: radial-gradient(
+  //     circle,
+  //     rgba(237, 202, 218, 1) 0%,
+  //     rgba(227, 211, 211, 1) 55%,
+  //     rgba(178, 212, 178, 1) 100%
+  //   );
+  //   transform: rotate(-6deg);
+  //   z-index: 1;
+  //   border-radius: 12px;
+  // }
+}
 
-  .css-logo {
-    top: 60%;
-    right: -80px;
-    animation-delay: 2s;
-  }
+/* ✨ Animasi floating logo kecil (opsional) */
+.hero-image img.react-logo,
+.hero-image img.js-logo,
+.hero-image img.css-logo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero-image .react-logo {
+  top: -40px;
+  right: -80px;
+}
+
+.hero-image .js-logo {
+  bottom: -40px;
+  left: -80px;
+  animation-delay: 1s;
+}
+
+.hero-image .css-logo {
+  top: 60%;
+  right: -80px;
+  animation-delay: 2s;
 }
 
 @keyframes float {
@@ -141,6 +256,7 @@
   }
 }
 
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
@@ -166,18 +282,3 @@
     }
   }
 }
-
-// .split-text {
-//   font-size: 2.5rem;
-//   font-weight: 700;
-//   // font-family: "Pacifico", cursive;
-//   color: #d14783;
-//   display: inline-block;
-//   overflow: hidden;
-//   margin-bottom: 1rem;
-
-//   span {
-//     display: inline-block;
-//     will-change: transform, opacity;
-//   }
-// }

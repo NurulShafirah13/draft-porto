@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
 }
 
-/* 🌸 NAVBAR WRAPPER */
+/*  NAVBAR WRAPPER */
 .nav-wrapper {
   position: fixed;
   top: 0;
@@ -64,6 +64,10 @@ body {
       .menu-item {
         text-decoration: none;
         color: #fff;
+        font-family: "Lora", serif;
+        font-optical-sizing: auto;
+
+        font-size: 1.3rem;
         font-size: 1.2rem;
         font-weight: 500;
         position: relative;

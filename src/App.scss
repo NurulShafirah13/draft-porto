@@ -1,4 +1,6 @@
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
@@ -10,5 +12,6 @@ html, body, #root {
 }
 
 main {
-  flex: 1; // ini yang bikin footer turun ke bawah kalau kontennya sedikit
+  flex: 1; // bikin footer tetap di bawah kalau konten sedikit
 }
+

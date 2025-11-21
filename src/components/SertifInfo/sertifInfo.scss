@@ -1,25 +1,100 @@
 .certif-section {
-  // background: linear-gradient(to right, #fff0f7, #ffe6f2);
   padding: 4rem 7rem;
   text-align: center;
+  position: relative;
   transition: all 0.5s ease;
+  overflow: hidden; /* cegah elemen keluar layar */
+  
+   /* ✨ Pola background dots */
+  &::before {
+    content: "";
+    position: absolute; /* ⬅️ dari absolute jadi fixed, biar gak dobel */
+    inset: 0;
+    background-image: radial-gradient(#dd889d 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.35;
+    z-index: -1; /* ⬅️ di bawah semua */
+    pointer-events: none; /* ⬅️ biar gak ganggu klik */
+  }
+  /* ================================
+     HEADER MAJALAH AESTHETIC
+  ================================= */
+  .mag-header {
+    text-align: center;
+    padding-bottom: 2rem;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 
-  // header h1 {
-  //   color: #ff4da6;
-  //   font-size: 2.2rem;
-  //   margin-bottom: 3rem;
-  //   font-weight: 700;
-  // }
-  h2 {
-      font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-size: 2.5rem;
-    font-weight: 800;
-    font-style: normal;
-    color: #6cd46c;
-    text-shadow: 0 0 10px rgba(33, 230, 108, 0.25);
+
+
+    .line-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0 0.5rem;
+      width: 100%;
+
+      span {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: #e62183;
+        letter-spacing: 3px;
+        font-size: 0.9rem;
+        white-space: nowrap; /* cegah teks pecah */
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        flex: 1;
+        height: 1.5px;
+        background: #e62183;
+        max-width: 200px; /* garis tidak terlalu panjang */
+      }
+    }
+
+    .line-full {
+      width: 100%;
+      height: 1.8px;
+      background: #e62183;
+      margin: 0.5rem 0;
+    }
+
+    /* ======================
+       JUDUL UTAMA
+    ======================= */
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #6cd46c;
+      letter-spacing: 3px;
+      margin: 1.2rem 0 0.8rem;
+      text-transform: uppercase;
+      word-break: break-word;
+
+      @media (max-width: 1024px) {
+        font-size: 2.4rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        word-break: break-word;
+      }
+    }
   }
 
+  /* ================================
+      GRID SERTIFIKAT
+  ================================= */
   .certif-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -35,6 +110,9 @@
     }
   }
 
+  /* ================================
+      CARD SERTIFIKAT
+  ================================= */
   .certif-card {
     position: relative;
     width: 100%;
@@ -113,9 +191,16 @@
     }
   }
 
+  /* ================================
+      SHOW MORE BUTTON
+  ================================= */
   .show-more-btn {
     margin-top: 1rem;
-background: radial-gradient(circle,rgba(240, 194, 213, 1) 0%, rgba(217, 235, 211, 1) 100%);
+    background: radial-gradient(
+      circle,
+      rgba(240, 194, 213, 1) 0%,
+      rgba(217, 235, 211, 1) 100%
+    );
     color: rgb(91, 81, 81);
     font-weight: 600;
     border: none;
@@ -131,5 +216,20 @@ background: radial-gradient(circle,rgba(240, 194, 213, 1) 0%, rgba(217, 235, 211
       box-shadow: 0 8px 16px rgba(230, 33, 131, 0.4);
       background: linear-gradient(45deg, #ff338c, #ff66b2);
     }
+  }
+}
+
+/* =========================================
+   PADDING RESPONSIVE SECTION
+========================================= */
+@media (max-width: 768px) {
+  .certif-section {
+    padding: 2rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certif-section {
+    padding: 1.8rem 0.8rem;
   }
 }

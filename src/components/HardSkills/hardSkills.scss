@@ -2,39 +2,56 @@
 
 /* ===== MAIN WRAPPER ===== */
 .skills {
-  padding: 1rem 2rem 1rem; /* tambah ruang di atas & bawah */
-  // background: #ffe4ec;
+  position: relative;
+  padding: 2rem 2rem 1rem;
+
+  /* ✨ Pola background dots */
+  &::before {
+    content: "";
+    position: fixed; /* ⬅️ dari absolute jadi fixed, biar gak dobel */
+    inset: 0;
+    background-image: radial-gradient(#dd889d 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.35;
+    z-index: -1; /* ⬅️ di bawah semua */
+    pointer-events: none; /* ⬅️ biar gak ganggu klik */
+  }
 
   //Judul component
   header {
     text-align: center;
     margin-bottom: 3rem;
 
+    //judul header
     h2 {
-      font-family: "Lora", serif;
-      font-optical-sizing: auto;
-      font-size: 2.5rem;
-      font-weight: 800;
-      font-style: normal;
-      color: #6cd46c;
-      text-shadow: 0 0 10px rgba(33, 230, 108, 0.25);
-      // text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    h3 {
-      font-size: 1.2rem;
-      // margin-top: 1px;
-      padding: 10px 80px;
-      font-weight: 800;
-      color: #e62183;
-      // text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: clamp(1.3rem, 4vw, 2.5rem);
+      color: #2f6c2f;
+      // text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.3;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0 2rem;
+      max-width: 90%;
+      overflow-wrap: normal; /* ⬅️ biar kata gak dipecah */
+      word-break: keep-all; /* ⬅️ mencegah pemotongan di tengah kata */
+      white-space: normal; /* ⬅️ biar tetap bisa turun baris */
     }
 
+    //description topic
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      text-indent: 1rem;
       text-align: center;
+      color: #333;
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
+
       max-width: 850px; /* batasi lebar teks */
       margin: 0 auto; /* center */
-      padding: 0 1rem; /* sedikit padding kiri-kanan */
+      padding: 1rem 1rem; /* sedikit padding kiri-kanan */
     }
   }
 }
@@ -42,39 +59,72 @@
 /* ===== SKILLS CARD SECTION ===== */
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 7rem; /* kasih napas antar kolom */
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3.5rem 4rem; /* jarak antar card (vertikal & horizontal) */
+  justify-content: center;
   align-items: start;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto; /* biar center */
+
+  width: 85%; /* biar gak melebar ke tepi layar */
+  max-width: 1000px; /* batasi area maksimum */
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 /* Style tiap kategori skill */
 //Card Tech Stack
 .skill-category {
-  background: #ffffff;
-  padding: 1rem 1.8rem;
-  border-radius: 18px;
+  position: relative;
   width: 100%;
-  // height: 100%; //kalo di uncomemnt bikin cardnya tinggi soalnya dia ambil card maksimal height
-  box-shadow: 0 4px 12px rgba(230, 33, 131, 0.15);
-  text-align: center;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  max-width: 320px;
+  min-height: 350px; /* biar tinggi lebih seragam */
+  padding: 1.5rem;
+  background: #fffdf6;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(230, 33, 131, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* ✨ efek pin logam di atas */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 30% 30%, #f48ca6, #b63b5e 80%);
+    border-radius: 50%;
+    box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.6),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+  }
+
+  /* ✨ efek bayangan benang pin */
+  &::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    z-index: 4;
+  }
 
   &:hover {
     transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(230, 33, 131, 0.2);
   }
 
   h3 {
     color: #e62183;
     font-size: 1.3rem;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
     margin-bottom: 1rem;
-    border-bottom: 2px solid #ffd1e6;
+    border-bottom: 2px solid #6cd46c;
     padding-bottom: 0.5rem;
   }
 }
@@ -92,7 +142,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: transparent;
+    // background: #fff;
     border-radius: 16px;
     padding: 0.3rem;
     transition: transform 0.3s ease;
@@ -109,6 +159,8 @@
     }
 
     figcaption {
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
       font-size: 1rem;
       font-weight: 500;
       color: #333;
@@ -116,7 +168,7 @@
   }
 }
 
-/* Responsif */
+/* Responsif  CARD TECH STACK*/
 @media (max-width: 992px) {
   .skill-category {
     width: 90%;
@@ -129,10 +181,18 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 480px) {
+  header h2 {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    line-height: 1.4;
+    max-width: 95%;
+  }
+}
 
 /* ====== SOFT & HARD SKILL SECTION ===== */
 .soft-art-section {
   position: relative;
+
   max-width: 1100px;
   margin: 4rem auto;
   text-align: center;
@@ -188,6 +248,9 @@
     p {
       font-size: 0.98rem;
       color: #444;
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
+      // font-size: 1.3rem;
       text-align: justify;
       line-height: 1.6;
       margin-top: 1.8rem;
@@ -203,6 +266,9 @@
         padding: 6px 14px;
         border-radius: 40px;
         margin: 3px 4px;
+        font-family: "Lora", serif;
+        font-optical-sizing: auto;
+
         font-size: 0.9rem;
         display: inline-block;
         white-space: nowrap;
@@ -211,24 +277,12 @@
   }
 }
 
-/* === Animasi unik buat teks di luar box === */
-@keyframes floatText {
-  0% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-8px);
-  }
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
 /* ===== Responsiveness ===== */
 @media (max-width: 992px) {
   .skills-container {
     gap: 2rem;
   }
+
   .soft-art-section .text-content h3 {
     top: -25px;
     font-size: 1rem;

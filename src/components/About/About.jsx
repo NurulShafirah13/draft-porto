@@ -14,10 +14,10 @@ function About() {
 
     gsap.fromTo(
       section.querySelector("header h2"),
-      { opacity: 0, x: 80 },
+      { opacity: 0, y: 40 },
       {
         opacity: 1,
-        x: 0,
+        y: 0,
         duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
@@ -28,14 +28,14 @@ function About() {
     );
 
     gsap.fromTo(
-      section.querySelector("article"),
-      { opacity: 0, y: 50 },
+      section.querySelectorAll("article p"),
+      { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
-        duration: 1.4,
-        delay: 0.2,
-        ease: "power3.out",
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.2,
         scrollTrigger: {
           trigger: section,
           start: "top 80%",
@@ -45,32 +45,36 @@ function About() {
   }, []);
 
   return (
-    <section className="about" id="about" ref={sectionRef}>
-      <div className="about__inner">
+    <section className="about-vintage" ref={sectionRef}>
+      <div className="about-inner">
         <header>
           <h2>
-            <SplitText text="About Me" color="#6cd46c" className="about-title" />
+            <SplitText text="About Me" color="#6cd46c" />
           </h2>
         </header>
 
-        <article className="about-card">
+        <article>
           <p>
-            Demonstrated dedication through participation in the Artificial
-            Intelligence Program and completion of the TensorFlow Developer
-            (TFD) Global Certification. Skilled in data analysis, database
-            management, web development, content management, and information
-            systems.
+            I am Shafirah — an enthusiast who loves learning, exploring new
+            things, and observing how they shape the world around me. I’m deeply
+            curious about how technology — and ideas beyond it — can solve
+            real-world problems, inspire meaningful research, and create
+            positive change.
           </p>
-
           <p>
-            Experienced as a Junior Database Consultant at a government
-            institution, conducting research on Clean and Sustainable River
-            Management. Also worked as an Account Receivable Administrator in a
-            container shipping company, showcasing adaptability by successfully
-            handling financial operations despite a different academic
-            background. Interested in research, data processing, and observation
-            to gain new insights in unique ways, with a strong commitment to
-            professional growth and development.
+            I began my journey through the Bangkit Cloud Computing Graduate
+            Program led by Google, Tokopedia, Gojek, and Traveloka, where I
+            built a strong foundation in cloud-based application development.
+            Later, I joined the AI Talent Program, an independent university
+            study focused on machine learning and artificial intelligence,
+            through which I had the opportunity to earn the TensorFlow Global
+            Certification.
+          </p>
+          <p>
+            For my final university project, my team and I developed a Digital
+            Pathology Platform using artificial intelligence for cervical cancer
+            diagnosis, which we also presented at the Pragma Student Workshop
+            Competition 2023.
           </p>
         </article>
       </div>

@@ -1,93 +1,87 @@
-import React, { useState } from "react";
+// LearningProject.jsx
+import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import "./learningProject.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SplitText from '../../components/SplitText/SplitText';
 
-import web1a from "../../assets/images/queen1.png";
-import web1b from "../../assets/images/queen2.png";
-import web1c from "../../assets/images/queen3.png";
+const LearningProject = ({ projects }) => {
+  const [modalProject, setModalProject] = useState(null);
+  const sliderRef = useRef(null);
 
-import web2a from "../../assets/images/queen1.png";
-import web2b from "../../assets/images/queen2.png";
-import web2c from "../../assets/images/queen3.png";
-
-import web3a from "../../assets/images/queen1.png";
-import web3b from "../../assets/images/queen2.png";
-
-const projects = [
-  { id: 1, name: "MindJoy", desc: "Website portfolio exploration.", thumbnails: [web1a, web1b, web1c] },
-  { id: 2, name: "ViuMe", desc: "Social media UI redesign.", thumbnails: [web2a, web2b, web2c] },
-  { id: 3, name: "Citarum Harum to WWF", desc: "Dashboard visualization for river management.", thumbnails: [web3a, web3b] },
-  { id: 4, name: "LPTM Student Certificate", desc: "Training certificate generator app.", thumbnails: [web3a, web3b] },
-  { id: 5, name: "AI-HEART", desc: "AI support for telemedicine at Yarsi Hospital.", thumbnails: [web3a, web3b] },
-  { id: 6, name: "Soda Caleg", desc: "Fast diagnostic ECG software.", thumbnails: [web3a, web3b] },
-  { id: 7, name: "Dashboard River Data", desc: "Visualization system for clean river monitoring.", thumbnails: [web3a, web3b] },
-  { id: 8, name: "Portfolio Revamp", desc: "New portfolio layout & animation.", thumbnails: [web3a, web3b] },
-];
-
-const LearningProject = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const handleCardClick = (project) => setSelectedProject(project);
-  const closeModal = () => setSelectedProject(null);
-
-  // 🎠 carousel utama
   const settings = {
     dots: false,
     infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    autoplay: true,
-    autoplaySpeed: 3500,
-    arrows: true,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } },
-    ],
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
   };
 
   return (
-    <section className="list-project">
-      <header className="project-header">
-        <h2>
-          <SplitText
-            text="My Learning Projects"
-            color="#6cd46c"
-            className="project-title"
-          />
-        </h2>
-        <p>Some of my works and learning experiments 💻</p>
-      </header>
+    <section className="project-part">
+      <div className="project-header">
+        <h1>Learning Projects</h1>
+        <div className="decor-line"></div>
+      </div>
 
-      {/* 🎠 Carousel */}
-      <Slider {...settings} className="project-carousel">
-        {projects.map((project) => (
-          <article
-            key={project.id}
-            className="project-card"
-            onClick={() => handleCardClick(project)}
-          >
-            <img src={project.thumbnails[0]} alt={project.name} />
-            <h3>{project.name}</h3>
-            <p>{project.desc}</p>
-          </article>
-        ))}
-      </Slider>
+      <p className="subhead">
+        My little Project Exploration
+      </p>
 
-      {/* 🌸 Modal Scrollable */}
-      {selectedProject && (
-        <div className="modal" onClick={closeModal}>
-          <div className="modal-scroll" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeModal}>✕</button>
-            <h2>{selectedProject.name}</h2>
-            <p className="project-desc">{selectedProject.desc}</p>
+      <div className="project-layout">
+        <article className="article">
+          <h3>Experiment Design</h3>
+          <p>
+            Over time, I’ve grown to love crafting things that live on the web —
+            from simple interfaces to full-featured dashboard systems. My recent
+            works include building an admin dashboard application for LPTM
+            Company complete with data CRUD operations, barcode scanning
+            integration, and responsive UI/UX using scss and Framer Motion.
+          </p>
+        </article>
 
-            <div className="scroll-content">
-              {selectedProject.thumbnails.map((img, i) => (
-                <img key={i} src={img} alt={`${selectedProject.name} preview ${i + 1}`} />
+        <div className="project-carousel">
+          <Slider ref={sliderRef} {...settings}>
+            {projects.map((p) => (
+              <div
+                key={p.id}
+                className="carousel-item"
+                onClick={() => setModalProject(p)}
+              >
+                {/* 💖 tampilkan cover di depan */}
+                <img src={p.cover || p.thumbnails[0]} alt={p.name} />
+                <h4>{p.name}</h4>
+                <p>{p.desc}</p>
+              </div>
+            ))}
+          </Slider>
+
+          <div className="carousel-nav">
+            <button
+              className="prev"
+              onClick={() => sliderRef.current.slickPrev()}
+            />
+            <button
+              className="next"
+              onClick={() => sliderRef.current.slickNext()}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* 💕 Modal Gallery */}
+      {modalProject && (
+        <div className="modal-overlay" onClick={() => setModalProject(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setModalProject(null)}>
+              ✕
+            </button>
+            <h2>{modalProject.name}</h2>
+            <p className="modal-desc">{modalProject.desc}</p>
+            <div className="modal-gallery">
+              {modalProject.thumbnails.map((img, i) => (
+                <img key={i} src={img} alt={`${modalProject.name} ${i + 1}`} />
               ))}
             </div>
           </div>
