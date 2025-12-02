@@ -1,0 +1,247 @@
+/* =====================================================
+   🌸 CARD INFO — PINK PRINCESS STYLE
+   ===================================================== */
+.cardInfo-section {
+  padding-bottom: 4rem;
+  header h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    text-transform: uppercase; 
+    letter-spacing: 3px;
+    color: #6cd46c;
+    text-align: center;
+
+    position: relative;
+    display: inline-block;
+    padding: 0 2rem;
+    margin: 0 auto 2.2rem auto; /* biar PERSIS kayak koran */
+
+    /* Garis kiri-kanan ala koran */
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 80px;
+      height: 2px;
+      background: #2a5c3d;
+    }
+
+    &::before {
+      left: -90px;
+    }
+
+    &::after {
+      right: -90px;
+    }
+
+    /* SUBTITLE — DI DALAM h2 */
+    .subline {
+      display: block;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-top: 8px;
+      color: #3e7a57;
+      font-weight: 500;
+      text-transform: none; /* supaya tidak ikut uppercase */
+    }
+  }
+
+
+  /* GRID CARD */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* IMAGE */
+  .cardImage img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(216, 28, 131, 0.2);
+  }
+
+  /* CARD DESCRIPTION */
+  .cardDesc {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px; /* bikin semua card tingginya sama */
+
+    h3 {
+      font-family: "Lora", serif;
+      text-align: justify;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #3b9f57;
+      margin-bottom: 0.5rem;
+    }
+
+    /* wrapper untuk tombol */
+    .btnWrapper {
+      display: flex;
+      justify-content: center; /* tengah horizontal */
+      margin-top: auto; /* dorong ke bawah */
+    }
+
+    .readMoreBtn {
+      background: #d81c83;
+      border: none;
+      padding: 7px 18px;
+      border-radius: 18px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      font-family: "Lora", serif;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: #f53694;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(216, 28, 131, 0.3);
+      }
+    }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .card-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* =====================================================
+   🌸 GLOBAL POPUP MODAL — PRINCESS AESTHETIC
+   ===================================================== */
+.popupOverlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(216, 28, 131, 0.2);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 5vh 1rem; 
+  overflow-y: auto;
+
+  z-index: 99999;
+  animation: fadeIn 0.35s ease;
+
+  min-height: 100%;
+  height: auto; /* FIX UTAMA */
+}
+
+
+
+/* POPUP BOX */
+.popupBox {
+  margin: auto;
+  background: white;
+
+  border-radius: 22px;
+  padding: 2rem 2.2rem;
+  width: 92%;
+  max-width: 500px;
+
+  max-height: 80vh;
+  overflow-y: auto;
+
+  box-shadow: 0 8px 20px rgba(216, 28, 131, 0.25),
+              0 0 25px rgba(255, 85, 160, 0.15);
+
+  border: 1px solid rgba(255, 180, 215, 0.5);
+  animation: popUp 0.35s ease;
+}
+
+
+
+/* TITLE */
+.popupBox h3 {
+  font-family: "Lora", serif;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d81c83;
+  margin-bottom: 1rem;
+}
+.popupBox h2 {
+  text-indent: 2rem; /* TAB MASUK */
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  line-height: 1.7;
+  text-align: justify;
+}
+/* PARAGRAPH WITH TAB INDENT */
+.popupBox p {
+  text-indent: 2rem; /* TAB MASUK */
+  font-size: 1rem;
+  font-family: "Lora", serif;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* CLOSE BUTTON */
+.closeBtn {
+  margin-top: 1.6rem;
+  padding: 10px 24px;
+  
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: linear-gradient(135deg, #d81c83, #f84ba0);
+  color: white;
+  font-weight: 600;
+
+  box-shadow: 0 5px 12px rgba(216, 28, 131, 0.3);
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(216, 28, 131, 0.35);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

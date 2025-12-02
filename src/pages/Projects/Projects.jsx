@@ -52,6 +52,7 @@ import lptm2 from "../../assets/images/web-scroll/lptm2.png";
 import bpjs1 from "../../assets/images/web-scroll/bpjs1.png";
 import bpjs2 from "../../assets/images/web-scroll/bpjs2.png";
 import bpjs3 from "../../assets/images/web-scroll/bpjs3.png";
+import CardInfo from "../../components/CardInfo/CardInfo";
 
 const Projects = () => {
   const itemsMasonry = [
@@ -159,7 +160,7 @@ const Projects = () => {
         "A landing page for a profile project created through a collaboration " +
         "between my team (Mobile Development, Cloud Computing, and Machine Learning). " +
         "We built an app that detects facial emotions and predicts mental test results " +
-        "using Python, Kotlin, HTML, and Jupyter Notebook.",
+        "using API, Python, Kotlin, HTML, and Jupyter Notebook.",
       cover: web1a,
       thumbnails: [mindjoy1, mindjoy2],
     },
@@ -241,28 +242,7 @@ const Projects = () => {
       </section>
 
       <section>
-        <WorkList title="My Journal" data={journalData} />
-        <WorkInfo title="" data={imageJournal} />
-      </section>
-
-      <section>
-        <Masonry
-          title="Galeri Proyek"
-          subtitle="Kumpulan dokumentasi proyek dan ide kreatif"
-          photos={itemsMasonry}
-        />
-      </section>
-
-      <section>
-        {projectData.map((project, index) => (
-          <ProjectInfo
-            key={index}
-            title={project.title}
-            subtitle={project.subtitle}
-            items={project.items}
-            images={project.images}
-          />
-        ))}
+        <CardInfo />
       </section>
     </>
   );

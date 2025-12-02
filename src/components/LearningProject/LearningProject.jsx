@@ -52,7 +52,7 @@ const LearningProject = ({ projects }) => {
                 {/* 💖 tampilkan cover di depan */}
                 <img src={p.cover || p.thumbnails[0]} alt={p.name} />
                 <h4>{p.name}</h4>
-                <p>{p.desc}</p>
+                {/* <p>{p.desc}</p> */}
               </div>
             ))}
           </Slider>
