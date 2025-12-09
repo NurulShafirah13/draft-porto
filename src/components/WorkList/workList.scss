@@ -94,7 +94,7 @@
       .date {
         font-family: "Lora", serif;              /* tetap soft & readable */
         color: #9d9595;
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 1.3rem;
         font-style: italic;
       }
@@ -109,7 +109,7 @@
           align-items: flex-start;
           margin-bottom: 1.2rem;
           line-height: 1.7;
-          font-size: 1.3rem;
+          font-size: 1rem;
           font-family: "Lora", serif;          /* teks utama */
           text-align: justify;
 
@@ -127,5 +127,182 @@
         animation: fadeSlideIn 0.6s ease forwards;
       }
     }
+  }
+}
+
+/* ============================================
+   📱 RESPONSIVE — MAGAZINE WORKLIST SECTION
+   ============================================ */
+
+/* Tablet Medium (max-width: 992px) */
+@media (max-width: 992px) {
+  .worklist-section {
+    padding: 1rem 6%;
+  }
+
+  .worklist-section h2 {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .worklist-container {
+    gap: 2rem;
+
+    .worklist-sidebar {
+      width: 30%;
+      gap: 1rem;
+
+      .worklist-btn {
+        font-size: 1.4rem;
+      }
+    }
+
+    .worklist-details {
+      margin: -0.5rem 0;
+      padding: 1.5rem 1.5rem;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      .date {
+        font-size: 1rem;
+      }
+
+      ul li {
+        font-size: 1.15rem;
+      }
+    }
+  }
+}
+
+/* Mobile Large (max-width: 768px) */
+@media (max-width: 768px) {
+  .worklist-section h2 {
+    font-size: 2.7rem;
+  }
+
+  .worklist-container {
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .worklist-sidebar {
+      width: 100%;
+      border-left: none;
+      border-bottom: 2px solid #ffe4ec;
+      padding-left: 0;
+      padding-bottom: 1rem;
+
+      .worklist-btn {
+        font-size: 1.35rem;
+        padding: 0.3rem 0;
+      }
+    }
+
+    .worklist-details {
+      width: 100%;
+      margin: 0;
+      padding: 1.7rem 1.4rem;
+
+      h3 {
+        font-size: 1.6rem;
+      }
+
+      ul li {
+        font-size: 1.15rem;
+      }
+    }
+  }
+}
+
+/* Mobile Small (max-width: 520px) */
+@media (max-width: 520px) {
+  .worklist-section {
+    padding: 1rem 5%;
+  }
+
+  .worklist-section h2 {
+    font-size: 2.3rem;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .worklist-container .worklist-sidebar .worklist-btn {
+    font-size: 1.2rem;
+  }
+
+  .worklist-details {
+    padding: 1.3rem 1.1rem !important;
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    .date {
+      font-size: 0.95rem;
+    }
+
+    ul li {
+      font-size: 1.05rem;
+    }
+  }
+}
+
+/* ===========================
+   📱 MOBILE FIX (max-width: 768px)
+   =========================== */
+@media (max-width: 768px) {
+  .worklist-container {
+    flex-direction: column;       /* sidebar naik ke atas */
+    gap: 2rem;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .worklist-sidebar {
+    width: 100% !important;       /* FULL width */
+    border-left: none !important;
+    border-bottom: 2px solid #ffe4ec;
+    padding-left: 0 !important;
+    padding-bottom: 1rem;
+  }
+
+  .worklist-sidebar .worklist-btn {
+    display: block;               /* tidak kepotong */
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    white-space: normal;          /* biar teks panjang wrap cantik */
+  }
+
+  /* ===== CONTENT / DETAILS ===== */
+  .worklist-details {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5rem 1.2rem !important;
+  }
+
+  .worklist-details h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .worklist-details ul li {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Untuk HP kecil banget (<= 480px) */
+@media (max-width: 480px) {
+  .worklist-sidebar .worklist-btn {
+    font-size: 1.2rem;
+  }
+
+  .worklist-details {
+    padding: 1.2rem 1rem !important;
   }
 }

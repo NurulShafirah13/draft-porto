@@ -125,6 +125,99 @@
     }
   }
 }
+/* ============================
+   📱 RESPONSIVE MOBILE FIXES
+   ============================ */
+@media (max-width: 520px) {
+  /* HEADER */
+  .cardInfo-section header h2 {
+    font-size: 2.2rem;
+    padding: 0 1rem;
+
+    &::before,
+    &::after {
+      width: 45px;
+    }
+
+    &::before {
+      left: -55px;
+    }
+
+    &::after {
+      right: -55px;
+    }
+  }
+
+  /* GRID */
+  .cardInfo-section .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  /* CARD IMAGE */
+  .cardInfo-section .cardImage img {
+    height: 200px;
+    border-radius: 12px;
+  }
+
+  /* CARD DESC */
+  .cardInfo-section .cardDesc h3 {
+    font-size: 1.05rem;
+  }
+
+  .cardInfo-section .cardDesc {
+    height: auto; /* biar tidak kepotong di layar kecil */
+  }
+
+  /* POPUP BOX */
+  .popupBox {
+    width: 95%;
+    padding: 1.6rem;
+    max-height: 85vh;
+  }
+
+  /* POPUP TITLE */
+  .popupBox h3 {
+    font-size: 1.3rem;
+  }
+
+  /* PARAGRAPH */
+  .popupBox p,
+  .popupBox h2 {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    text-indent: 1.5rem; /* tetap ada tab */
+  }
+
+  /* CLOSE BUTTON */
+  .closeBtn {
+    font-size: 0.85rem;
+    padding: 9px 20px;
+  }
+}
+
+/* HP KECIL BANGET (iPhone SE / 360px) */
+@media (max-width: 380px) {
+  .cardInfo-section header h2 {
+    font-size: 1.9rem;
+
+    &::before,
+    &::after {
+      width: 35px;
+    }
+  }
+
+  .popupBox {
+    padding: 1.3rem;
+  }
+
+  .popupBox p,
+  .popupBox h2 {
+    font-size: 0.9rem;
+  }
+}
+
 
 /* =====================================================
    🌸 GLOBAL POPUP MODAL — PRINCESS AESTHETIC

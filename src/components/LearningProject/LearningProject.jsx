@@ -1,4 +1,3 @@
-// LearningProject.jsx
 import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import "./learningProject.scss";
@@ -15,7 +14,7 @@ const LearningProject = ({ projects }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: false, //supaya pake nav custom, true kalo pake nav bawaan
   };
 
   return (
@@ -25,9 +24,7 @@ const LearningProject = ({ projects }) => {
         <div className="decor-line"></div>
       </div>
 
-      <p className="subhead">
-        My little Project Exploration
-      </p>
+      <p className="subhead">My little Project Exploration</p>
 
       <div className="project-layout">
         <article className="article">
@@ -37,7 +34,7 @@ const LearningProject = ({ projects }) => {
             from simple interfaces to full-featured dashboard systems. My recent
             works include building an admin dashboard application for LPTM
             Company complete with data CRUD operations, barcode scanning
-            integration, and responsive UI/UX using scss and Framer Motion.
+            integration, and responsive UI/UX using SCSS and Framer Motion.
           </p>
         </article>
 
@@ -49,39 +46,55 @@ const LearningProject = ({ projects }) => {
                 className="carousel-item"
                 onClick={() => setModalProject(p)}
               >
-                {/* 💖 tampilkan cover di depan */}
                 <img src={p.cover || p.thumbnails[0]} alt={p.name} />
                 <h4>{p.name}</h4>
-                {/* <p>{p.desc}</p> */}
               </div>
             ))}
           </Slider>
 
+          {/* Custom Navigation */}
           <div className="carousel-nav">
             <button
               className="prev"
               onClick={() => sliderRef.current.slickPrev()}
-            />
+            >
+              ‹
+            </button>
             <button
               className="next"
               onClick={() => sliderRef.current.slickNext()}
-            />
+            >
+              ›
+            </button>
           </div>
         </div>
       </div>
 
-      {/* 💕 Modal Gallery */}
+      {/* Modal Gallery */}
       {modalProject && (
-        <div className="modal-overlay" onClick={() => setModalProject(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setModalProject(null)}>
+        <div
+          className="modal-overlay"
+          onClick={() => setModalProject(null)}
+        >
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="close-btn"
+              onClick={() => setModalProject(null)}
+            >
               ✕
             </button>
             <h2>{modalProject.name}</h2>
             <p className="modal-desc">{modalProject.desc}</p>
             <div className="modal-gallery">
               {modalProject.thumbnails.map((img, i) => (
-                <img key={i} src={img} alt={`${modalProject.name} ${i + 1}`} />
+                <img
+                  key={i}
+                  src={img}
+                  alt={`${modalProject.name} ${i + 1}`}
+                />
               ))}
             </div>
           </div>

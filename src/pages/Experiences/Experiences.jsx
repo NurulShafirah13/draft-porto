@@ -3,6 +3,7 @@ import Sertif1 from "../../assets/images/sertif/sertif-sema1.JPG";
 import Sertif2 from "../../assets/images/sertif/sertif-sema1.JPG";
 import Sertif3 from "../../assets/images/sertif/sertif-sema1.JPG";
 import WorkList from "../../components/WorkList/WorkList";
+import CollageInfo from "../../components/CollageInfo/CollageInfo";
 
 function Experiences() {
   //mengisi data saat manggil props dari komponen workInfo
@@ -66,6 +67,9 @@ function Experiences() {
       </section>
       <section>
         <WorkInfo title="My Contact Works" data={workData} />
+      </section>
+      <section>
+        <CollageInfo/>
       </section>
     </section>
   );

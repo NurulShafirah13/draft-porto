@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@700&display=swap");
+
+.collage-info {
+  width: 100%;
+  padding: 3rem 5%;
+  background: #fff;
+  font-family: "Lora", serif;
+
+  header h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    color: #6cd46c;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  /* =======================
+      GRID MAIN LAYOUT
+     ======================= */
+  article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); /* kiri lebih kecil */
+    gap: 2rem;
+    width: 100%;
+  }
+
+/* =======================
+   LEFT SIDE – BIG CARD
+   ======================= */
+.collegeInfo-section-left {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .collegeInfo-first {
+    width: 85%;                    /* gambar + teks satu kolom, lebih kecil */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;           /* supaya teks ikut rata tengah gambar */
+    gap: 0.8rem;
+
+    img {
+      width: 100%;                 /* FIX: gambar jadi patokan lebar */
+      max-height: 240px;
+      object-fit: cover;
+      border-radius: 1rem;
+      display: block;
+    }
+
+    .text-box {
+      width: 100%;                 /* teks sejajar dengan gambar */
+      text-align: left;            /* tetap kiri */
+      word-wrap: break-word;
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #e62183;
+      }
+
+      p {
+        font-size: 1rem;
+        // font-family: "Lora", serif;          /* teks utama */
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+/* =======================
+   RESPONSIVE (HP)
+   ======================= */
+@media (max-width: 900px) {
+  .collegeInfo-section-left .collegeInfo-first {
+    flex-direction: column;  /* HP otomatis gambar atas, teks bawah */
+  }
+
+  .collegeInfo-section-left img {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .collegeInfo-section-left .text-box {
+    width: 100%;
+  }
+}
+
+
+  /* =======================
+      RIGHT SIDE – LIST STYLE
+     ======================= */
+  .collegeInfo-section-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+
+    .collegeInfo-second,
+    .collegeInfo-third,
+    .collegeInfo-fourth {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+      align-items: flex-start;
+
+      img {
+        width: 130px;            /* PERBESAR gambar kanan */
+        height: 110px;
+        object-fit: cover;
+        border-radius: 0.8rem;
+        flex-shrink: 0;
+      }
+
+      .text-box {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: break-word;
+
+        h4 {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #e62183;
+
+        }
+
+        p {
+          font-size: 0.95rem;
+          line-height: 1.35;
+        }
+      }
+    }
+  }
+
+  /* =======================
+      RESPONSIVE BREAKPOINTS
+     ======================= */
+  @media (max-width: 900px) {
+    article {
+      grid-template-columns: 1fr;
+    }
+
+    .collegeInfo-section-right img {
+      width: 95px;
+      height: 95px;
+    }
+
+    .collegeInfo-section-left img {
+      width: 90%;
+      max-height: 200px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    header h2 {
+      font-size: 2.2rem;
+      text-align: center;
+    }
+
+    .collegeInfo-section-right img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .collegeInfo-section-left img {
+      width: 95%;
+      max-height: 180px;
+    }
+  }
+}
+
+/* Global fix supaya tidak ada overflow kanan */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
