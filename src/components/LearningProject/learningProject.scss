@@ -105,11 +105,11 @@
   ------------------------------ */
   .article {
     max-width: 450px;
-  padding: clamp(0.3rem, 1.5vw, 2rem);
-   padding-right: 1rem;
-  background: transparent;
-  margin: 0 auto 0 0;     // ✅ align ke kiri dengan jarak nyaman
-  position: relative;
+    padding: clamp(0.3rem, 1.5vw, 2rem);
+    padding-right: 1rem;
+    background: transparent;
+    margin: 0 auto 0 0; // ✅ align ke kiri dengan jarak nyaman
+    position: relative;
 
     /* Vertical separator */
     &::after {
@@ -326,12 +326,11 @@
     object-fit: contain;
   }
 }
-@media (max-width: 600px) {
-  .project-layout {
-    gap: 1.5rem !important;
-  }
-}
-
+// @media (max-width: 600px) {
+//   .project-layout {
+//     gap: 1.5rem !important;
+//   }
+// }
 
 @media (max-width: 480px) {
   .project-carousel .carousel-item img {
@@ -339,29 +338,6 @@
     width: 100%;
     object-fit: contain;
   }
-}
-
-/* ============================
-   SLICK FIX — WAJIB
-============================ */
-.project-carousel .slick-track {
-  display: flex !important;
-}
-
-.project-carousel .slick-slide > div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.project-carousel .slick-slide {
-  width: 100% !important;
-  min-width: 100% !important;
-  max-width: 100% !important;
-}
-
-.project-carousel .slick-list {
-  overflow: hidden !important;
 }
 @media (max-width: 600px) {
   .project-carousel .slick-slide {
@@ -407,3 +383,25 @@
   }
 }
 
+/* ============================
+   SLICK FIX — WAJIB
+============================ */
+.project-carousel .slick-track {
+  display: flex !important;
+}
+
+.project-carousel .slick-slide > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.project-carousel .slick-slide {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
+
+.project-carousel .slick-list {
+  overflow: hidden !important;
+}

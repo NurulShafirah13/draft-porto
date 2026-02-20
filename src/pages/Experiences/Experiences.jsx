@@ -4,6 +4,7 @@ import Sertif2 from "../../assets/images/sertif/sertif-sema1.JPG";
 import Sertif3 from "../../assets/images/sertif/sertif-sema1.JPG";
 import WorkList from "../../components/WorkList/WorkList";
 import CollageInfo from "../../components/CollageInfo/CollageInfo";
+import WorkIntro from "../../components/WorkIntro/WorkIntro";
 
 function Experiences() {
   //mengisi data saat manggil props dari komponen workInfo
@@ -63,11 +64,14 @@ function Experiences() {
   return (
     <section className="contact">
       <section>
-        <WorkList title="Work Experiences" data={myWorks} />;
+        <WorkIntro/>
       </section>
       <section>
-        <WorkInfo title="My Contact Works" data={workData} />
+        <WorkList title="Work Experiences" data={myWorks} />;
       </section>
+      {/* <section>
+        <WorkInfo title="My Contact Works" data={workData} />
+      </section> */}
       <section>
         <CollageInfo/>
       </section>

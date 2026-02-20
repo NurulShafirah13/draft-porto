@@ -1,0 +1,145 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=UnifrakturCook:400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+/* ============================
+   SCOPE SEMUA STYLE DI SINI
+============================ */
+.work-intro {
+  color: #111;
+  padding: 2.5rem;
+  max-width: 1100px; /* supaya bisa gambar lebih lebar */
+  margin: 1rem auto;
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.5;
+
+  /* ============================
+      MASTHEAD
+     ============================ */
+  .masthead {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #ddd;
+
+    .paper-title {
+      font-family: "Pirata One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+      font-size: 3rem;
+      line-height: 1;
+      margin: 0;
+      letter-spacing: 0.5px;
+      color: #0b0b0b;
+    }
+
+    .strapline {
+      font-family: "Playfair Display", serif;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: #6b6b6b;
+      margin-top: 0.25rem;
+    }
+  }
+
+  /* ============================
+      INTRO TEXT
+     ============================ */
+  .intro-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 1.5rem 0 1.5rem; /* LEBIH DEKAT AGAR SEJAJAR DENGAN GAMBAR */
+
+    .intro-left {
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        margin: 0 0 0.25rem;
+        font-weight: 700;
+        color: #222;
+      }
+
+      .sub {
+        color: #777;
+        font-size: 0.95rem;
+        margin: 0;
+      }
+    }
+  }
+
+  /* ============================
+      ARTICLE LAYOUT
+     ============================ */
+  .article {
+    display: grid;
+
+    /* gambar LEBIH LEBAR seperti contoh newspaper */
+    grid-template-columns: 65% 1fr;
+
+    /* gap kecil seperti contoh */
+    gap: 0.2rem;
+
+    align-items: start;
+    margin-top: 0.8rem; /* super dekat dari intro */
+  }
+
+  /* IMAGE & caption */
+  .article-figure {
+    text-align: left;
+      margin-left: -0.2rem;  /* geser ke kiri */
+
+
+    img {
+      width: 100%;
+      height: 380px; /* tinggi diperbesar, newspaper look */
+      object-fit: cover;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    figcaption {
+      font-family: "Libre Baskerville", serif;
+      font-size: 0.75rem;
+      color: #444;
+      font-style: italic;
+      line-height: 1.3;
+      margin-top: 0.1rem;
+    }
+  }
+
+  /* ============================
+      TEXT
+     ============================ */
+  .article-text {
+    font-size: 1rem;
+    color: #222;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 0; /* sejajar gambar */
+
+    .dropcap {
+      float: left;
+      font-size: 3rem;
+      line-height: 0.8;
+      padding-right: 0.4rem;
+      padding-top: 0.15rem;
+      font-weight: 700;
+      font-family: "Playfair Display", serif;
+      color: #111;
+    }
+  }
+
+  /* ============================
+      RESPONSIVE
+     ============================ */
+  @media (max-width: 900px) {
+    .article {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .masthead .paper-title {
+      font-size: 2.2rem;
+    }
+  }
+}
