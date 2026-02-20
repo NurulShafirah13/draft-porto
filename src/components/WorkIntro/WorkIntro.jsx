@@ -13,7 +13,7 @@ const WorkIntro = () => {
 
       <div className="intro-row">
         <div className="intro-left">
-          <h2>judul nya nanti</h2>
+          <h2>Learning, Growing, Becoming</h2>
           <p className="sub">from college to work experiences</p>
         </div>
       </div>
@@ -23,17 +23,40 @@ const WorkIntro = () => {
         <figure className="article-figure">
           <img src={CollegeImg1} alt="foto-kuliah" />
           <figcaption>
-            Students gather at the opening — caption vintage
+            Students gather at the opening — Yarsi University
           </figcaption>
         </figure>
 
         {/* TEKS DI KANAN */}
         <div className="article-text">
           <p>
-            <span className="dropcap">C</span>
-            ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-
+            <span className="dropcap">D</span>
+            uring my university years, I actively participated in various
+            activities and truly enjoyed the journey. Through these experiences,
+            I gained valuable lessons that helped shape my mindset and personal
+            growth. The photo beside this text was taken when my friends and I
+            participated in Pragma 39, which was held on our campus. The
+            competition brought together participants not only from Indonesia,
+            but also from Thailand and Japan. Through this event, I learned the
+            importance of teamwork and healthy competition, and I also had the
+            opportunity to make new friends from different countries. In
+            addition to competitions, I took part in several programs under
+            Kampus Merdeka, including the Independent Internship Program and the
+            AI Talent program organized by my university.
+            Through these programs, I was able to deepen my knowledge in artificial
+            intelligence and even earned an international certification funded
+            by a grant. This opportunity became one of the achievements I am
+            truly grateful for. Beyond academics, I was also actively involved
+            in a faculty-level student organization for two years. These
+            organizational experiences were both enjoyable and meaningful,
+            helping me develop responsibility, teamwork, and leadership skills.
+            After graduating from university, I was accepted into a government
+            institution. In this role, I continue to learn many new things,
+            including gaining hands-on experience by visiting various locations
+            to collect information directly from the field. All of these
+            experiences have broadened my perspective and enriched my life
+            journey. Today, I remain open and hopeful for many more meaningful
+            opportunities in the future.
           </p>
         </div>
       </article>
