@@ -15,6 +15,30 @@
   font-family: "Libre Baskerville", serif;
   line-height: 1.65; /* lebih enak dibaca */
 
+//JUDUL 
+  .project-header {
+    text-align: center;
+    margin-bottom: clamp(0.6rem, 1.5vw, 1rem);
+    position: relative;
+
+    h1 {
+      font-family: "MonteCarlo", cursive;
+      font-size: clamp(4.5rem, 5vw, 3rem);
+      color: #e62183;
+      text-shadow: 2px 2px 0 #deb5cd;
+      line-height: 1;
+      margin: 0.3rem 0 2.5rem;
+    }
+
+    .decor-line {
+      border-top: 3px solid #7b8d7d;
+      border-bottom: 1px solid #7b8d7d;
+      height: 4px;
+      width: 100%;
+      margin: 1rem auto;
+    }
+  }
+
   /* ============================
       MASTHEAD
   ============================ */

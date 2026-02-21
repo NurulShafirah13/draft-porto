@@ -5,7 +5,11 @@ const WorkIntro = () => {
   return (
     <section className="work-intro">
       <header className="masthead">
-        <h1 className="paper-title">My Experiences</h1>
+        <div className="project-header">
+          <h1>My Experiences</h1>
+          <div className="decor-line"></div>
+        </div>
+        {/* <h1 className="paper-title">My Experiences</h1> */}
         <div className="strapline">
           CHRONICLING THE PAST, PRESENT, AND FUTURE
         </div>
@@ -23,7 +27,7 @@ const WorkIntro = () => {
         <figure className="article-figure">
           <img src={CollegeImg1} alt="foto-kuliah" />
           <figcaption>
-            Students gather at the opening — Yarsi University
+            AI Talent Students gather at the opening of Pragma 39 — Yarsi University
           </figcaption>
         </figure>
 
@@ -42,8 +46,8 @@ const WorkIntro = () => {
             opportunity to make new friends from different countries. In
             addition to competitions, I took part in several programs under
             Kampus Merdeka, including the Independent Internship Program and the
-            AI Talent program organized by my university.
-            Through these programs, I was able to deepen my knowledge in artificial
+            AI Talent program organized by my university. Through these
+            programs, I was able to deepen my knowledge in artificial
             intelligence and even earned an international certification funded
             by a grant. This opportunity became one of the achievements I am
             truly grateful for. Beyond academics, I was also actively involved
