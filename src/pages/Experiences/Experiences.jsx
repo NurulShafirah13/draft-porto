@@ -5,6 +5,20 @@ import Sertif3 from "../../assets/images/sertif/sertif-sema1.JPG";
 import WorkList from "../../components/WorkList/WorkList";
 import CollageInfo from "../../components/CollageInfo/CollageInfo";
 import WorkIntro from "../../components/WorkIntro/WorkIntro";
+import Masonry from "../../components/Masonry/Masonry";
+
+import pragma from "../../assets/images/experience/pragma.jpeg";
+import gradu from "../../assets/images/experience/grad.jpeg";
+import labai from "../../assets/images/experience/labai.jpeg";
+import sema from "../../assets/images/experience/sema.jpeg";
+import bpjs from "../../assets/images/experience/bpjs.jpeg";
+import bali1 from "../../assets/images/experience/bali1.JPG";
+import bali2 from "../../assets/images/experience/bali2.JPG";
+import bali3 from "../../assets/images/experience/bali3.JPG";
+import bali4 from "../../assets/images/experience/bali4.jpeg";
+import bali5 from "../../assets/images/experience/bali5.jpeg";
+import bali6 from "../../assets/images/experience/bali6.JPG";
+import kaltim from "../../assets/images/experience/kaltim.jpeg";
 
 function Experiences() {
   //mengisi data saat manggil props dari komponen workInfo
@@ -45,7 +59,7 @@ function Experiences() {
         "Conducted comprehensive data compilation and documentation of various issues related to environment, technical matters, raw and clean water, social concerns, and government work plans related to river management in Indonesia.",
         "Recorded decisions and actions taken during meetings for the preparation of final river management reports, ensuring that all agreed actions were well-documented.",
         "Developed a prototype website for interactive information dissemination related to river management projects using React Js, with a focus on providing easy access to information for stakeholders.",
-        "Developed visual dashboard for data and databases in river management using Looker Studio and python. This dashboard are used to display variables required by experts or provided by experts, facilitating analysis and decision-making processes."
+        "Developed visual dashboard for data and databases in river management using Looker Studio and python. This dashboard are used to display variables required by experts or provided by experts, facilitating analysis and decision-making processes.",
       ],
     },
     {
@@ -61,10 +75,87 @@ function Experiences() {
     },
   ];
 
+  const photos = [
+    {
+      src: pragma,
+      alt: "Foto 1",
+      title: "Judul Foto 1",
+      text: "Deskripsi singkat foto 1",
+    },
+    {
+      src: gradu,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+
+    {
+      src: labai,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: sema,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: bpjs,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: bali1,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: bali2,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: bali3,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: bali4,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: bali5,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+    {
+      src: bali6,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+     {
+      src: kaltim,
+      alt: "Foto 2",
+      title: "Judul Foto 2",
+      text: "Deskripsi singkat foto 2",
+    },
+
+  ];
+
   return (
     <section className="contact">
       <section>
-        <WorkIntro/>
+        <WorkIntro />
       </section>
       <section>
         <WorkList title="Work Experiences" data={myWorks} />;
@@ -73,7 +164,15 @@ function Experiences() {
         <WorkInfo title="My Contact Works" data={workData} />
       </section> */}
       <section>
-        <CollageInfo/>
+        <CollageInfo />
+      </section>
+
+      <section>
+        <Masonry
+          title="Our Gallery"
+          subtitle="Moments we captured together"
+          photos={photos}
+        />
       </section>
     </section>
   );

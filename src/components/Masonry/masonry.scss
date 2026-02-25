@@ -1,7 +1,7 @@
 .masonryGallery-section {
   width: 100%;
   padding: 2rem 2rem;
-  background: radial-gradient(circle,rgba(240, 194, 213, 1) 0%, rgba(226, 247, 218, 1) 100%);
+  // background: radial-gradient(circle,rgba(240, 194, 213, 1) 0%, rgba(226, 247, 218, 1) 100%);
 
   text-align: center;
   position: relative;
@@ -75,7 +75,7 @@
   .masonryGallery-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(46, 45, 45, 0.45);
     opacity: 0;
     transition: opacity 0.4s ease;
     display: flex;
